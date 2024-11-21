@@ -100,11 +100,15 @@ export default function KeyValues() {
         <div className="flex items-center justify-center gap-4">
           <Button
             size="lg"
-            className="font-medium bg-brand-primary hover:bg-brand-primary"
+            className="bg-brand-primary hover:-translate-y-1 transition-all duration-500 w-full"
           >
             See plans
           </Button>
-          <Button variant="secondary" size="lg" className="font-medium">
+          <Button
+            variant="secondary"
+            size="lg"
+            className="font-medium hover:-translate-y-1 transition-all duration-500 w-full"
+          >
             Book a call
           </Button>
         </div>

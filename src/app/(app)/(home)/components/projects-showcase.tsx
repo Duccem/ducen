@@ -71,7 +71,7 @@ export default function ProjectsShowcase() {
   }, []);
 
   return (
-    <div className="w-full min-h-screen  py-20 overflow-hidden">
+    <div className="w-[calc(100vw - 5%)] min-h-screen  py-20 overflow-hidden">
       <div className="mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 ">
           Featured Projects

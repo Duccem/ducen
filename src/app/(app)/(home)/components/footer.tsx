@@ -1,5 +1,6 @@
 'use client';
 import { Button } from '@/lib/shadcn/components/ui/button';
+import { CalendarDays } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
@@ -101,8 +102,9 @@ export default function Footer() {
 
           <Button
             size="lg"
-            className="bg-brand-primary text-white hover:bg-brand-primary"
+            className="mt-4 gap-2 bg-brand-primary hover:bg-background hover:text-foreground hover:border-brand-primary border transition-all duration-500 hover:shadow-md"
           >
+            <CalendarDays className="h-4 w-4" />
             Schedule a 20-minute call
           </Button>
         </div>

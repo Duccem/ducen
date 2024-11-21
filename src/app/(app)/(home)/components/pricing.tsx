@@ -2,6 +2,7 @@ import { Badge } from '@/lib/shadcn/components/ui/badge';
 import { Button } from '@/lib/shadcn/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/lib/shadcn/components/ui/card';
 import { Briefcase, BriefcaseMedical, Check, Clock } from 'lucide-react';
+import StatusButton from './atoms/status-button';
 
 export default function Pricing() {
   const features = [
@@ -14,9 +15,12 @@ export default function Pricing() {
     'Fast delivery + revisions',
   ];
   return (
-    <section className="py-16 px-4 md:py-24 min-h-screen flex justify-center items-center">
-      <div className="max-w-7xl flex flex-col justify-center items-center">
-        <div className="text-center space-y-4 mb-12">
+    <section
+      className="py-16 px-4 md:py-24 min-h-screen flex justify-center items-center"
+      id="price"
+    >
+      <div className="max-w-7xl flex flex-col gap-10 justify-center items-center">
+        <div className="text-center space-y-4">
           <div className="flex justify-center items-center">
             <Badge
               variant="secondary"
@@ -32,22 +36,8 @@ export default function Pricing() {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Design is for passion, with an useful purpose in my product outputs.
           </p>
-
-          <div className="flex justify-center items-center">
-            <div className="flex items-center gap-2 bg-emerald-50 rounded-full px-3 py-1 justify-center">
-              <Badge
-                variant="secondary"
-                className="shadow-md text-emerald-700 flex justify-center items-center gap-2"
-              >
-                <div className="size-3 bg-emerald-600 animate-pulse rounded-full"></div>
-                Available
-              </Badge>
-              <p className="text-emerald-500 text-sm font-semibold">
-                New project available in November
-              </p>
-            </div>
-          </div>
         </div>
+        <StatusButton />
 
         <div className="grid md:grid-cols-3 gap-8 w-full">
           <Card className="p-4 shadow-md ">
@@ -63,7 +53,7 @@ export default function Pricing() {
                   Ideal for startups, small businesses and entrepreneurs looking
                   to build a product from scratch.
                 </p>
-                <div className="text-3xl font-semibold mb-2">From $6000</div>
+                <div className="text-3xl font-semibold mb-2">From $4000</div>
                 <div className="text-muted-foreground">
                   For project {'>'} 7 weeks
                 </div>
@@ -82,7 +72,10 @@ export default function Pricing() {
             </CardContent>
 
             <CardFooter className="pt-6">
-              <Button className="w-full bg-brand-primary hover:bg-brand-primary text-white">
+              <Button
+                size="lg"
+                className="gap-2 bg-brand-primary hover:-translate-y-1 transition-all duration-500 w-full"
+              >
                 Book a discovery call
               </Button>
             </CardFooter>
@@ -100,7 +93,7 @@ export default function Pricing() {
                   Ideal for short-term projects, like landing pages, marketing
                   websites, or small features. Limited availability.
                 </p>
-                <div className="text-3xl font-semibold mb-2">From $60/h</div>
+                <div className="text-3xl font-semibold mb-2">From $20/h</div>
                 <div className="text-muted-foreground">
                   For short-term projects
                 </div>
@@ -119,7 +112,10 @@ export default function Pricing() {
             </CardContent>
 
             <CardFooter className="pt-6">
-              <Button className="w-full bg-brand-primary hover:bg-brand-primary text-white ">
+              <Button
+                size="lg"
+                className="gap-2 bg-brand-primary hover:-translate-y-1 transition-all duration-500 w-full"
+              >
                 Book a discovery call
               </Button>
             </CardFooter>
@@ -137,7 +133,7 @@ export default function Pricing() {
                   Ideal for long-term collaborations, like product design
                   maintenance, feature development, or design system creation.
                 </p>
-                <div className="text-3xl font-semibold mb-2">From $3000/m</div>
+                <div className="text-3xl font-semibold mb-2">From $2000/m</div>
                 <div className="text-muted-foreground">
                   For mid-term collaborations
                 </div>
@@ -156,7 +152,10 @@ export default function Pricing() {
             </CardContent>
 
             <CardFooter className="pt-6">
-              <Button className="w-full bg-brand-primary hover:bg-brand-primary text-white ">
+              <Button
+                size="lg"
+                className="gap-2 bg-brand-primary hover:-translate-y-1 transition-all duration-500 w-full"
+              >
                 Book a discovery call
               </Button>
             </CardFooter>

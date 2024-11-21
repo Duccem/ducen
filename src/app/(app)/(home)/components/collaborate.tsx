@@ -4,7 +4,10 @@ import { AppWindow, Monitor, Smartphone } from 'lucide-react';
 
 export default function Collaborate() {
   return (
-    <section className="py-16 px-4 bg-[#F9FAFB] md:py-24 min-h-screen flex justify-center items-start">
+    <section
+      className="py-16 px-4 bg-[#F9FAFB] md:py-24 min-h-screen flex justify-center items-start"
+      id="services"
+    >
       <div className="max-w-7xl flex flex-col justify-start items-center">
         <div className="text-center space-y-4 mb-12">
           <div className="flex justify-center items-center">
