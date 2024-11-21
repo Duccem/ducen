@@ -3,7 +3,6 @@
 import Github from '@/lib/ducen/components/icons/github';
 import { Button } from '@/lib/shadcn/components/ui/button';
 import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 
 export default function ProjectsShowcase() {
@@ -81,7 +80,7 @@ export default function ProjectsShowcase() {
           <div className="relative">
             <div ref={containerRef1} className="flex gap-6 whitespace-nowrap">
               {allProjects.map((project, idx) => (
-                <Image
+                <img
                   src={project.image}
                   alt={project.title}
                   width={600}
@@ -98,7 +97,7 @@ export default function ProjectsShowcase() {
               className="flex gap-6 whitespace-nowrap flex-row-reverse"
             >
               {[...projects, ...projects].map((project, idx) => (
-                <Image
+                <img
                   src={project.image}
                   alt={project.title}
                   width={600}

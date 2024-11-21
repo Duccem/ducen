@@ -1,7 +1,6 @@
 'use client';
 import { Button } from '@/lib/shadcn/components/ui/button';
 import { CalendarDays } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 
@@ -79,7 +78,7 @@ export default function Footer() {
             </div>
             <span className="text-2xl">×</span>
             <div className="w-10 h-10 bg-gray-200 rounded-lg flex justify-center items-center overflow-hidden">
-              <Image
+              <img
                 src={'/image/work/mi-foto.png'}
                 alt=""
                 width={40}
@@ -114,7 +113,7 @@ export default function Footer() {
           <div className="relative">
             <div ref={containerRef1} className="flex gap-6 whitespace-nowrap">
               {allProjects.map((project, idx) => (
-                <Image
+                <img
                   src={project.image}
                   alt={project.title}
                   width={600}
