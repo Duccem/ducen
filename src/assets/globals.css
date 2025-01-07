@@ -9,20 +9,6 @@ body,
   overflow-x: hidden;
 }
 
-body::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: hsl(var(--secondary));
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: var(--color-brand-primary);
-  border-radius: 10px;
-}
 @layer base {
   :root {
     --color-brand-primary: #8167ec;
@@ -79,6 +65,21 @@ body::-webkit-scrollbar {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: hsl(var(--secondary));
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 10px;
 }
 @layer base {
   * {
