@@ -1,10 +1,10 @@
 import { Button } from '@/lib/shadcn/components/ui/button';
-import { ArrowRight, Phone } from 'lucide-react';
+import { ArrowUpRight, Phone } from 'lucide-react';
 import Navbar from '../internal/navbar';
 
 const Hero = () => {
   return (
-    <div className="w-full flex flex-col h-[calc(100vh-15px)] box-border relative bg-hero rounded-t-2xl py-4 px-[80px] gap-4">
+    <div className="w-full flex flex-col h-[calc(100vh-15px)] box-border relative bg-hero rounded-2xl py-4 px-[80px] gap-4">
       <Navbar />
       <div className="flex h-full w-ful">
         <div className="flex flex-col justify-center items-start lg:w-1/2 gap-4">
@@ -35,20 +35,34 @@ const Hero = () => {
         </div>
         <div className="flex flex-col justify-end items-center lg:w-1/2 gap-4 h-2/3">
           <div className="flex justify-between items-center gap-4">
-            <Button
-              className="bg-neutral-900 text-2xl p-5 h-16 font-extralight [&_svg]:size-8 hover:bg-neutral-700 hover:-translate-x-1 hover:-translate-y-1 transition-all"
-              size={'lg'}
-            >
-              View our process
-              <ArrowRight />
-            </Button>
-            <Button
-              className="bg-neutral-900 text-2xl p-5 h-16 font-extralight [&_svg]:size-8 hover:bg-neutral-700 hover:-translate-x-1 hover:-translate-y-1 transition-all"
-              size={'lg'}
-            >
-              Book a 15 min call
-              <Phone />
-            </Button>
+            <div className="group hover:-translate-x-1 hover:-translate-y-1 transition-all">
+              <Button
+                className="bg-neutral-900 text-2xl p-5 h-16 font-extralight [&_svg]:size-8 group-hover:bg-neutral-700  rounded-full"
+                size={'lg'}
+              >
+                View our process
+              </Button>
+              <Button
+                className="rounded-full h-16 w-16  bg-neutral-900  group-hover:bg-neutral-700"
+                size={'icon'}
+              >
+                <ArrowUpRight />
+              </Button>
+            </div>
+            <div className="group hover:-translate-x-1 hover:-translate-y-1 transition-all">
+              <Button
+                className="bg-neutral-900 text-2xl p-5 h-16 font-extralight [&_svg]:size-8 group-hover:bg-neutral-700  rounded-full"
+                size={'lg'}
+              >
+                View our process
+              </Button>
+              <Button
+                className="rounded-full h-16 w-16  bg-neutral-900  group-hover:bg-neutral-700"
+                size={'icon'}
+              >
+                <Phone />
+              </Button>
+            </div>
           </div>
         </div>
       </div>

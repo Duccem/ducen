@@ -20,15 +20,15 @@ const AboutUs = () => {
           <span className="font-black">experiences</span> that inspire and make
           an <span className="font-black">impact</span>.
         </p>
-        <div className="mt-5 relative flex items-center">
+        <div className="mt-5 relative flex items-center hover:-translate-x-1 hover:-translate-y-1 transition-all">
           <Button
-            className="bg-black/20 rounded-full border-white border hover:bg-black/50 text-white hover:shadow-sm"
+            className="bg-white rounded-full  hover:bg-black/50 text-black hover:bg-white"
             size={'lg'}
           >
             View our process
           </Button>
           <Button
-            className="rounded-full  bg-white hover:bg-gray-300 text-black"
+            className="rounded-full  bg-white text-black hover:bg-white"
             size={'icon'}
           >
             <ArrowUpRight />
