@@ -1,21 +1,11 @@
-import Collaborate from './components/collaborate';
-import Footer from './components/footer';
-import HeroSection from './components/hero-section';
-import Pricing from './components/pricing';
-import ProjectsShowcase from './components/projects-showcase';
-import KeyValues from './components/values';
-import WorkProcess from './components/work-process';
+import AboutUs from '@/components/sections/about-us';
+import Hero from '@/components/sections/hero';
 
 export default function Home() {
   return (
-    <div className="w-full h-full">
-      <HeroSection />
-      <ProjectsShowcase />
-      <WorkProcess />
-      <Collaborate />
-      <KeyValues />
-      <Pricing />
-      <Footer />
+    <div className="bg-neutral-900 p-4">
+      <Hero />
+      <AboutUs />
     </div>
   );
 }
