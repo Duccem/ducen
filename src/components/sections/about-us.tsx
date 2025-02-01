@@ -25,7 +25,7 @@ const AboutUs = () => {
             className="bg-white rounded-full  hover:bg-black/50 text-black hover:bg-white"
             size={'lg'}
           >
-            View our process
+            Contact with us
           </Button>
           <Button
             className="rounded-full  bg-white text-black hover:bg-white"

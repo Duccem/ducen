@@ -33,8 +33,8 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col justify-end items-center lg:w-1/2 gap-4 h-2/3">
-          <div className="flex justify-between items-center gap-4">
+        <div className="flex flex-col justify-end items-end lg:w-1/2 gap-4 h-full">
+          <div className="flex  justify-end items-end gap-4 h-full">
             <div className="group hover:-translate-x-1 hover:-translate-y-1 transition-all">
               <Button
                 className="bg-neutral-900 text-2xl p-5 h-16 font-extralight [&_svg]:size-8 group-hover:bg-neutral-700  rounded-full"
@@ -54,7 +54,7 @@ const Hero = () => {
                 className="bg-neutral-900 text-2xl p-5 h-16 font-extralight [&_svg]:size-8 group-hover:bg-neutral-700  rounded-full"
                 size={'lg'}
               >
-                View our process
+                Book a 15min call
               </Button>
               <Button
                 className="rounded-full h-16 w-16  bg-neutral-900  group-hover:bg-neutral-700"

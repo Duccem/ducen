@@ -47,4 +47,5 @@
     "topbar",
     "upstash"
   ],
+  "CodeGPT.apiKey": "Ollama",
 }
