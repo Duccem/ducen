@@ -8,11 +8,10 @@
 
 .service {
   --r: 20px; /* radius */
-  --s: 40px; /* size of inner curve */
+  --s: 30px; /* size of inner curve */
   --x: 25px; /* horizontal offset (no percentange) */
   --y: 5px; /* vertical offset (no percentange) */
 
-  height: 400px;
   border-radius: var(--r);
 }
 .top-right {

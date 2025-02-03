@@ -1,5 +1,7 @@
 import { Button } from '@/lib/shadcn/components/ui/button';
-import { ArrowUpRight, Phone } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
+import LinkedIn from '../icons/linkedin';
+import WhatsAppIcon from '../icons/whatsapp';
 import Navbar from '../internal/navbar';
 
 const Hero = () => {
@@ -40,20 +42,6 @@ const Hero = () => {
                 className="bg-neutral-900 text-2xl p-5 h-16 font-extralight [&_svg]:size-8 group-hover:bg-neutral-700  rounded-full"
                 size={'lg'}
               >
-                View our process
-              </Button>
-              <Button
-                className="rounded-full h-16 w-16  bg-neutral-900  group-hover:bg-neutral-700"
-                size={'icon'}
-              >
-                <ArrowUpRight />
-              </Button>
-            </div>
-            <div className="group hover:-translate-x-1 hover:-translate-y-1 transition-all">
-              <Button
-                className="bg-neutral-900 text-2xl p-5 h-16 font-extralight [&_svg]:size-8 group-hover:bg-neutral-700  rounded-full"
-                size={'lg'}
-              >
                 Book a 15min call
               </Button>
               <Button
@@ -61,6 +49,26 @@ const Hero = () => {
                 size={'icon'}
               >
                 <Phone />
+              </Button>
+            </div>
+            <div className="flex justify-start items-center">
+              <Button
+                className="rounded-full h-16 w-16  bg-neutral-900  hover:bg-neutral-700"
+                size={'icon'}
+              >
+                <WhatsAppIcon />
+              </Button>
+              <Button
+                className="rounded-full h-16 w-16  bg-neutral-900  hover:bg-neutral-700"
+                size={'icon'}
+              >
+                <LinkedIn />
+              </Button>
+              <Button
+                className="rounded-full h-16 w-16  bg-neutral-900  hover:bg-neutral-700"
+                size={'icon'}
+              >
+                <Mail />
               </Button>
             </div>
           </div>
