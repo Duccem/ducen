@@ -1,15 +1,16 @@
-import '@/assets/globals.css';
-import icon from '@/assets/lumen-dark.png';
-import type { Metadata } from 'next';
-import { Nunito } from 'next/font/google';
+import "@/assets/globals.css";
+import icon from "@/assets/lumen-dark.png";
+import Navbar from "@/components/internal/navbar";
+import type { Metadata } from "next";
+import { Nunito } from "next/font/google";
 
 const nunito = Nunito({
-  subsets: ['latin'],
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: 'Lumen code',
-  description: 'Make your ideas come to life',
+  title: "Lumen code",
+  description: "Make your ideas come to life",
 };
 
 export default function RootLayout({
@@ -21,9 +22,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <link rel="icon" href={icon.src} sizes="any" />
       <body
-        className={`${nunito.className} antialiased box-border`}
+        className={`${nunito.className} antialiased box-border relative`}
         suppressHydrationWarning={true}
       >
+        <Navbar />
         {children}
       </body>
     </html>

@@ -1,21 +1,24 @@
-import faq from '@/assets/faq.jpg';
+import faq from "@/assets/faq.jpg";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/lib/shadcn/components/ui/accordion';
+} from "@/lib/shadcn/components/ui/accordion";
 const Questions = () => {
   return (
-    <div className="grid grid-cols-2 px-[80px] mt-[250px]">
+    <div className="grid grid-cols-1 md:grid-cols-2 px-4 md:px-[80px] mt-[250px]">
       <div className="flex flex-col justify-start h-full gap-4">
         <p className="text-white font-semibold text-5xl">
           Frequently Asked Questions
         </p>
         <div className="flex flex-col">
           <Accordion type="single" collapsible className="w-full space-y-4">
-            <AccordionItem value="item-1" className="bg-white px-4 rounded-2xl">
-              <AccordionTrigger className="text-xl">
+            <AccordionItem
+              value="item-1"
+              className="bg-white px-4 rounded-lg md:rounded-2xl text-start"
+            >
+              <AccordionTrigger className="text-xl text-start">
                 Whats services offer Lumen?
               </AccordionTrigger>
               <AccordionContent className="text-lg">
@@ -25,8 +28,11 @@ const Questions = () => {
                 management.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-2" className="bg-white px-4 rounded-2xl">
-              <AccordionTrigger className="text-xl">
+            <AccordionItem
+              value="item-2"
+              className="bg-white px-4 rounded-lg md:rounded-2xl text-start"
+            >
+              <AccordionTrigger className="text-xl text-start">
                 What is the workflow process from start to project delivery?
               </AccordionTrigger>
               <AccordionContent className="text-lg">
@@ -37,8 +43,11 @@ const Questions = () => {
                 your expectations.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-3" className="bg-white px-4 rounded-2xl">
-              <AccordionTrigger className="text-xl">
+            <AccordionItem
+              value="item-3"
+              className="bg-white px-4 rounded-lg md:rounded-2xl text-start"
+            >
+              <AccordionTrigger className="text-xl text-start">
                 Can I make changes or adjustments during the project
                 development?
               </AccordionTrigger>
@@ -48,8 +57,11 @@ const Questions = () => {
                 require adjustments to the timeline or budget.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-4" className="bg-white px-4 rounded-2xl">
-              <AccordionTrigger className="text-xl">
+            <AccordionItem
+              value="item-4"
+              className="bg-white px-4 rounded-lg md:rounded-2xl"
+            >
+              <AccordionTrigger className="text-xl text-start">
                 How are project costs calculated?
               </AccordionTrigger>
               <AccordionContent className="text-lg">
@@ -58,8 +70,11 @@ const Questions = () => {
                 detailed budget before starting.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-5" className="bg-white px-4 rounded-2xl">
-              <AccordionTrigger className="text-xl">
+            <AccordionItem
+              value="item-5"
+              className="bg-white px-4 rounded-lg md:rounded-2xl"
+            >
+              <AccordionTrigger className="text-xl text-start">
                 Do you offer maintenance services after project delivery?
               </AccordionTrigger>
               <AccordionContent className="text-lg">
@@ -67,8 +82,11 @@ const Questions = () => {
                 and technical support to ensure your site or app runs smoothly.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-6" className="bg-white px-4 rounded-2xl">
-              <AccordionTrigger className="text-xl">
+            <AccordionItem
+              value="item-6"
+              className="bg-white px-4 rounded-lg md:rounded-2xl"
+            >
+              <AccordionTrigger className="text-xl text-start">
                 Are you available for long-term projects or only for one-time
                 jobs?
               </AccordionTrigger>
@@ -77,8 +95,11 @@ const Questions = () => {
                 We adapt to each client`s needs.
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="item-7" className="bg-white px-4 rounded-2xl">
-              <AccordionTrigger className="text-xl">
+            <AccordionItem
+              value="item-7"
+              className="bg-white px-4 rounded-lg md:rounded-2xl"
+            >
+              <AccordionTrigger className="text-xl text-start">
                 Do you work with partial payments or require full payment
                 upfront?
               </AccordionTrigger>
@@ -91,8 +112,8 @@ const Questions = () => {
           </Accordion>
         </div>
       </div>
-      <div className="w-full  flex-1 flex justify-center items-center">
-        <div className="h-[500px] rounded-lg overflow-hidden">
+      <div className="w-full  flex-1 flex justify-center items-center mt-3">
+        <div className="md:h-[500px] rounded-lg overflow-hidden">
           <img src={faq.src} alt="" className="object-contain h-full" />
         </div>
       </div>

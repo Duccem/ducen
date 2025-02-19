@@ -1,21 +1,21 @@
-import img1 from '@/assets/ecommerce.jpg';
-import img2 from '@/assets/logos.jpg';
-import img3 from '@/assets/marketing.jpg';
-import img4 from '@/assets/mobile-dev.jpg';
-import { Button } from '@/lib/shadcn/components/ui/button';
+import img1 from "@/assets/ecommerce.jpg";
+import img2 from "@/assets/logos.jpg";
+import img3 from "@/assets/marketing.jpg";
+import img4 from "@/assets/mobile-dev.jpg";
+import { Button } from "@/lib/shadcn/components/ui/button";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/lib/shadcn/components/ui/carousel';
-import { ArrowUpRight, Phone } from 'lucide-react';
-import './sections.css';
+} from "@/lib/shadcn/components/ui/carousel";
+import { ArrowUpRight, Phone } from "lucide-react";
+import "./sections.css";
 const Services = () => {
   return (
-    <div className="flex w-full h-[calc(100vh-15px)] bg-white rounded-lg  justify-center items-center gap-10 px-[80px]">
-      <div className="w-1/2 flex flex-col justify-start items-center ">
+    <div className="flex flex-col md:flex-row w-full min-h-[calc(100vh-15px)] bg-white rounded-lg  justify-center items-center gap-10 px-4 md:px-[80px]">
+      <div className="w-full md:w-1/2 flex flex-col justify-start items-center py-2">
         <p className="font-bold text-6xl text-start w-full">What we offer?</p>
         <p className="font-medium text-lg  ">
           At our studio, we specialize in delivering cutting-edge code
@@ -25,19 +25,19 @@ const Services = () => {
         <div className="group hover:-translate-x-1 hover:-translate-y-1 transition-all self-start mt-8">
           <Button
             className="bg-neutral-900 text-2xl p-5 h-16 font-extralight [&_svg]:size-8 group-hover:bg-neutral-700  rounded-full"
-            size={'lg'}
+            size={"lg"}
           >
             Book a call
           </Button>
           <Button
             className="rounded-full h-16 w-16  bg-neutral-900  group-hover:bg-neutral-700"
-            size={'icon'}
+            size={"icon"}
           >
             <Phone />
           </Button>
         </div>
       </div>
-      <div className="flex flex-col px-[80px] gap-10 w-1/2">
+      <div className="flex flex-col md:px-[80px] gap-10 w-full md:w-1/2">
         <p className="text-3xl font-semibold">Our services</p>
         <Carousel className="p-1">
           <CarouselContent className="p-1">
@@ -60,13 +60,13 @@ const Services = () => {
                   <div className="group hover:-translate-x-1 hover:-translate-y-1 transition-all flex items-center justify-end">
                     <Button
                       className="bg-neutral-900  p-5  font-extralight [&_svg]:size-8 group-hover:bg-neutral-700  rounded-full"
-                      size={'lg'}
+                      size={"lg"}
                     >
                       See projects
                     </Button>
                     <Button
                       className="rounded-full bg-neutral-900  group-hover:bg-neutral-700"
-                      size={'icon'}
+                      size={"icon"}
                     >
                       <ArrowUpRight />
                     </Button>
@@ -93,13 +93,13 @@ const Services = () => {
                   <div className="group hover:-translate-x-1 hover:-translate-y-1 transition-all flex items-center justify-end">
                     <Button
                       className="bg-neutral-900  p-5  font-extralight [&_svg]:size-8 group-hover:bg-neutral-700  rounded-full"
-                      size={'lg'}
+                      size={"lg"}
                     >
                       See projects
                     </Button>
                     <Button
                       className="rounded-full bg-neutral-900  group-hover:bg-neutral-700"
-                      size={'icon'}
+                      size={"icon"}
                     >
                       <ArrowUpRight />
                     </Button>
@@ -127,13 +127,13 @@ const Services = () => {
                   <div className="group hover:-translate-x-1 hover:-translate-y-1 transition-all flex items-center justify-end">
                     <Button
                       className="bg-neutral-900  p-5  font-extralight [&_svg]:size-8 group-hover:bg-neutral-700  rounded-full"
-                      size={'lg'}
+                      size={"lg"}
                     >
                       See projects
                     </Button>
                     <Button
                       className="rounded-full bg-neutral-900  group-hover:bg-neutral-700"
-                      size={'icon'}
+                      size={"icon"}
                     >
                       <ArrowUpRight />
                     </Button>
@@ -160,13 +160,13 @@ const Services = () => {
                   <div className="group hover:-translate-x-1 hover:-translate-y-1 transition-all flex items-center justify-end">
                     <Button
                       className="bg-neutral-900  p-5  font-extralight [&_svg]:size-8 group-hover:bg-neutral-700  rounded-full"
-                      size={'lg'}
+                      size={"lg"}
                     >
                       See projects
                     </Button>
                     <Button
                       className="rounded-full bg-neutral-900  group-hover:bg-neutral-700"
-                      size={'icon'}
+                      size={"icon"}
                     >
                       <ArrowUpRight />
                     </Button>

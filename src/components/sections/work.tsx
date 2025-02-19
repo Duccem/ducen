@@ -1,16 +1,16 @@
-import { Button } from '@/lib/shadcn/components/ui/button';
-import { ArrowUpRight } from 'lucide-react';
-import image1 from '../../../public/image/work/mobile2.png';
+import { Button } from "@/lib/shadcn/components/ui/button";
+import { ArrowUpRight } from "lucide-react";
+import image1 from "../../../public/image/work/mobile2.png";
 const Work = () => {
   return (
-    <div className="w-full min-h-[calc(100vh-30px)] px-[80px] py-[60px]">
+    <div className="w-full min-h-[calc(100vh-30px)] md:px-[80px] py-[60px]">
       <p className="text-white text-xl">Work</p>
       <p className="text-6xl font-semibold text-white">Our recent projects</p>
-      <div className="w-full grid grid-cols-3 gap-6 py-[20px]">
+      <div className="w-full grid grid-cols-1  md:grid-cols-3 gap-6 py-[20px]">
         <div className="bg-white flex flex-col p-2 rounded-xl gap-[30px] relative">
           <Button
             className="rounded-full absolute right-4 top-4  bg-white text-black hover:bg-white"
-            size={'icon'}
+            size={"icon"}
           >
             <ArrowUpRight />
           </Button>
@@ -32,7 +32,7 @@ const Work = () => {
         <div className="bg-white flex flex-col p-2 rounded-xl gap-[30px] relative">
           <Button
             className="rounded-full absolute right-4 top-4  bg-white text-black hover:bg-white"
-            size={'icon'}
+            size={"icon"}
           >
             <ArrowUpRight />
           </Button>
@@ -54,7 +54,7 @@ const Work = () => {
         <div className="bg-white flex flex-col p-2 rounded-xl gap-[30px] relative">
           <Button
             className="rounded-full absolute right-4 top-4  bg-white text-black hover:bg-white"
-            size={'icon'}
+            size={"icon"}
           >
             <ArrowUpRight />
           </Button>
@@ -75,20 +75,20 @@ const Work = () => {
         </div>
       </div>
       <div className="flex flex-col">
-        <p className="text-xl font-semibold text-white w-1/3">
+        <p className="text-xl font-semibold text-white w-full md:w-1/3">
           Clean and straight-forward design makes your users fall in love with
           your product at the very first sight.
         </p>
         <div className="mt-5 w-fit relative flex items-center hover:-translate-x-1 hover:-translate-y-1 transition-all">
           <Button
             className="bg-white rounded-full  hover:bg-black/50 text-black hover:bg-white"
-            size={'lg'}
+            size={"lg"}
           >
             Let discuss
           </Button>
           <Button
             className="rounded-full  bg-white text-black hover:bg-white"
-            size={'icon'}
+            size={"icon"}
           >
             <ArrowUpRight />
           </Button>
