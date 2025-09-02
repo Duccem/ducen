@@ -15,7 +15,7 @@ const Navbar = () => {
           <img src={logo.src} alt="" className="h-[50px]" />
           <p className="text-white text-3xl font-semibold">Lumen</p>
         </Link>
-        <div className="flex justify-between items-center gap-4 text-white bg-neutral-900 p-3 rounded-lg">
+        {/* <div className="flex justify-between items-center gap-4 text-white bg-neutral-900 p-3 rounded-lg">
           <Link
             href={"/services"}
             className="hover:bg-neutral-700 p-3 rounded-md transition-colors duration-300"
@@ -40,7 +40,7 @@ const Navbar = () => {
           >
             Pricing
           </Link>
-        </div>
+        </div> */}
         <div>
           <Link href={"http://cal.com/jose-manuel-veliz/15min"}>
             <Button className="bg-neutral-900 hover:bg-neutral-700">
@@ -62,4 +62,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
