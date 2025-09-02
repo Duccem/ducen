@@ -1,21 +1,26 @@
 import { Button } from "@/lib/shadcn/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
-import image1 from "../../../public/image/work/mobile2.png";
+import Link from "next/link";
 const Work = () => {
   return (
     <div className="w-full min-h-[calc(100vh-30px)] md:px-[80px] py-[60px]">
       <p className="text-white text-xl">Work</p>
       <p className="text-6xl font-semibold text-white">Our recent projects</p>
-      <div className="w-full grid grid-cols-1  md:grid-cols-3 gap-6 py-[20px]">
+      <div className="w-full grid grid-cols-1  md:grid-cols-2 gap-6 py-[20px]">
         <div className="bg-white flex flex-col p-2 rounded-xl gap-[30px] relative">
-          <Button
-            className="rounded-full absolute right-4 top-4  bg-white text-black hover:bg-white"
-            size={"icon"}
+          <Link
+            className="absolute right-4 top-4 bg-white rounded-full p-2 border"
+            href={"https://www.4kadventuresandtours.com/"}
+            target="_blank"
           >
             <ArrowUpRight />
-          </Button>
+          </Link>
           <div className="">
-            <img src={image1.src} alt="" className="rounded-xl" />
+            <img
+              src={"/image/work/4kadventure.png"}
+              alt=""
+              className="rounded-xl"
+            />
           </div>
           <div className="flex flex-col justify-between gap-6 px-4">
             <div className="flex  justify-between items-center">
@@ -30,46 +35,28 @@ const Work = () => {
           </div>
         </div>
         <div className="bg-white flex flex-col p-2 rounded-xl gap-[30px] relative">
-          <Button
-            className="rounded-full absolute right-4 top-4  bg-white text-black hover:bg-white"
-            size={"icon"}
+          <Link
+            className="absolute right-4 top-4 bg-white rounded-full p-2 border"
+            href={"https://pagoconcarnet.cl/"}
+            target="_blank"
           >
             <ArrowUpRight />
-          </Button>
+          </Link>
           <div className="">
-            <img src={image1.src} alt="" className="rounded-xl" />
+            <img
+              src={"/image/work/conectados.png"}
+              alt=""
+              className="rounded-xl"
+            />
           </div>
           <div className="flex flex-col justify-between gap-6 px-4">
             <div className="flex  justify-between items-center">
-              <p className="text-2xl font-semibold">4K Adventure and tours</p>
+              <p className="text-2xl font-semibold">Ahora conectados</p>
               <p className="text-2xl text-gray-400 font-medium">2025</p>
             </div>
             <p className="font-medium text-gray-600">
-              4K is a pioneering travel agency for tours within and outside of
-              Trinidad and Tobago, creating unique experiences and special
-              memories for its clients.
-            </p>
-          </div>
-        </div>
-        <div className="bg-white flex flex-col p-2 rounded-xl gap-[30px] relative">
-          <Button
-            className="rounded-full absolute right-4 top-4  bg-white text-black hover:bg-white"
-            size={"icon"}
-          >
-            <ArrowUpRight />
-          </Button>
-          <div className="">
-            <img src={image1.src} alt="" className="rounded-xl" />
-          </div>
-          <div className="flex flex-col justify-between gap-6 px-4">
-            <div className="flex  justify-between items-center">
-              <p className="text-2xl font-semibold">4K Adventure and tours</p>
-              <p className="text-2xl text-gray-400 font-medium">2025</p>
-            </div>
-            <p className="font-medium text-gray-600">
-              4K is a pioneering travel agency for tours within and outside of
-              Trinidad and Tobago, creating unique experiences and special
-              memories for its clients.
+              A platform that helps Chileans pay better and reactivate the small
+              economy.
             </p>
           </div>
         </div>
@@ -99,4 +86,3 @@ const Work = () => {
 };
 
 export default Work;
-
