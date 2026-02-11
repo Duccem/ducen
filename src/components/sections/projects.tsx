@@ -61,12 +61,15 @@ export const ProjectsSection = () => {
         {/* Projects List */}
         <div className="space-y-20">
           {projects.map((project, index) => (
-            <motion.div
+            <motion.a
               key={project.title}
+              href={project.href}
+              target="_blank"
+              rel="noreferrer"
               initial={{ opacity: 0, y: 50 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2 + index * 0.15 }}
-              className="group cursor-pointer"
+              className="group cursor-pointer block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-foreground"
             >
               <div className="grid lg:grid-cols-12 gap-8 items-start pb-16 border-b border-background/20">
                 {/* Number */}
@@ -118,7 +121,7 @@ export const ProjectsSection = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
