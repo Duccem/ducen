@@ -1,12 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-
-const stats = [
-  { value: "10+", label: "Proyectos completados" },
-  { value: "95%", label: "Clientes satisfechos" },
-  { value: "7+", label: "Años de experiencia" },
-];
+import { useTranslations } from "next-intl";
 
 const skills = [
   "HTML5",
@@ -20,6 +15,8 @@ const skills = [
 ];
 
 export const AboutSection = () => {
+  const t = useTranslations("about");
+  const stats = t.raw("stats") as Array<{ value: string; label: string }>;
   const { ref, isVisible } = useScrollAnimation(0.2);
 
   return (
@@ -45,7 +42,7 @@ export const AboutSection = () => {
               <div className="aspect-[4/5] rounded-3xl overflow-hidden">
                 <img
                   src={"/images/portrait-2.jpeg"}
-                  alt="José Manuel Véliz"
+                  alt={t("imageAlt")}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -82,7 +79,7 @@ export const AboutSection = () => {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl font-display font-semibold mb-8"
             >
-              Sobre mí
+              {t("title")}
             </motion.h2>
 
             <motion.p
@@ -91,9 +88,7 @@ export const AboutSection = () => {
               transition={{ delay: 0.2 }}
               className="text-muted-foreground text-lg leading-relaxed mb-6"
             >
-              Mi camino en el software comenzó con la curiosidad de entender
-              cómo funcionan las cosas. Esa curiosidad se transformó en pasión
-              por crear soluciones que realmente ayudan a los negocios a crecer.
+              {t("paragraph1")}
             </motion.p>
 
             <motion.p
@@ -102,9 +97,7 @@ export const AboutSection = () => {
               transition={{ delay: 0.25 }}
               className="text-muted-foreground leading-relaxed mb-10"
             >
-              Me especializo en trabajar con emprendedores y pequeñas empresas
-              que necesitan digitalizar sus operaciones. Entiendo que cada peso
-              cuenta y que necesitas resultados, no promesas.
+              {t("paragraph2")}
             </motion.p>
 
             {/* Stats */}

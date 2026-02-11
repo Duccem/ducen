@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Mail, Linkedin, Twitter, Github, ArrowUpRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Button } from "../ui/button";
+import { useTranslations } from "next-intl";
 
 const socialLinks = [
   {
@@ -16,6 +17,7 @@ const socialLinks = [
 ];
 
 export const ContactSection = () => {
+  const t = useTranslations("contact");
   const { ref, isVisible } = useScrollAnimation(0.2);
 
   return (
@@ -32,14 +34,13 @@ export const ContactSection = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold mb-6">
-              ¿Tienes un proyecto
+              {t("title")}
               <br />
-              <span className="italic font-normal">en mente?</span>
+              <span className="italic font-normal">{t("titleEmphasis")}</span>
             </h2>
 
             <p className="text-muted-foreground text-lg max-w-lg mx-auto">
-              Me encantaría escuchar sobre tu idea. Agenda una llamada gratuita
-              y exploremos cómo puedo ayudarte.
+              {t("description")}
             </p>
           </motion.div>
 
@@ -56,7 +57,7 @@ export const ContactSection = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                Agendar llamada
+                {t("ctaPrimary")}
                 <ArrowUpRight
                   className="ml-1 group-hover:rotate-45 transition-transform"
                   size={20}
@@ -66,7 +67,7 @@ export const ContactSection = () => {
             <Button variant="heroOutline" size="xl" asChild>
               <a href="mailto:ducen29@gmail.com">
                 <Mail size={20} />
-                Enviar email
+                {t("ctaSecondary")}
               </a>
             </Button>
           </motion.div>
@@ -100,9 +101,7 @@ export const ContactSection = () => {
             transition={{ delay: 0.5 }}
             className="text-center mt-24 pt-10 border-t border-border"
           >
-            <p className="text-muted-foreground text-sm">
-              © 2024 José Manuel Véliz. Todos los derechos reservados.
-            </p>
+            <p className="text-muted-foreground text-sm">{t("footer")}</p>
           </motion.div>
         </motion.div>
       </div>

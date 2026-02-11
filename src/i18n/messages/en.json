@@ -1,0 +1,154 @@
+{
+  "metadata": {
+    "title": "Jose Veliz | Software Developer",
+    "description": "Software developer focused on SaaS and web apps for entrepreneurs and SMBs."
+  },
+  "nav": {
+    "items": [
+      {
+        "label": "Home",
+        "href": "#hero"
+      },
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "Projects",
+        "href": "#projects"
+      },
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
+    ],
+    "cta": "Let's talk",
+    "switcherLabel": "Language",
+    "locales": [
+      {
+        "value": "en",
+        "label": "EN"
+      },
+      {
+        "value": "es",
+        "label": "ES"
+      }
+    ]
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "role": "Software Developer",
+    "description": "I build software that drives business growth. Specialized in SaaS solutions and web apps for entrepreneurs and SMBs.",
+    "ctaPrimary": "Have a project?",
+    "ctaSecondary": "My CV",
+    "imageAlt": "Jose Manuel Veliz - Software Developer"
+  },
+  "about": {
+    "title": "About me",
+    "paragraph1": "My journey in software began with curiosity about how things work. That curiosity turned into a passion for building solutions that truly help businesses grow.",
+    "paragraph2": "I specialize in working with entrepreneurs and small businesses that need to digitize their operations. I know every dollar counts and you need results, not promises.",
+    "stats": [
+      {
+        "value": "10+",
+        "label": "Completed projects"
+      },
+      {
+        "value": "95%",
+        "label": "Satisfied clients"
+      },
+      {
+        "value": "7+",
+        "label": "Years of experience"
+      }
+    ],
+    "imageAlt": "Jose Manuel Veliz"
+  },
+  "projects": {
+    "title": "Projects",
+    "titleEmphasis": "Selected",
+    "roleLabel": "Role",
+    "items": [
+      {
+        "number": "01",
+        "title": "Helsa",
+        "subtitle": "Management system for health clinics and doctors",
+        "description": "All-in-one platform that helped health clinics digitize operations, cutting admin time by 50% and improving patient experience.",
+        "tech": [
+          "Next.js",
+          "TypeScript",
+          "PostgreSQL"
+        ],
+        "role": "Full Stack Developer",
+        "href": "https://helsa-web.vercel.app"
+      },
+      {
+        "number": "02",
+        "title": "PartySplit",
+        "subtitle": "Expense-splitting app for social events",
+        "description": "Mobile app that simplifies splitting costs among friends during social events, reducing friction and financial conflicts.",
+        "tech": [
+          "React Native",
+          "Expo",
+          "Supabase"
+        ],
+        "role": "Full Stack Developer",
+        "href": "https://www.partysplit.app/"
+      },
+      {
+        "number": "03",
+        "title": "Influencer Inmobiliaria",
+        "subtitle": "Management system for real estate agents",
+        "description": "Platform for real estate agents that optimizes property and client management, boosting sales by 30% with tracking and analytics tools.",
+        "tech": [
+          "NextJS",
+          "PayloadCMS",
+          "AWS"
+        ],
+        "role": "Full Stack Developer",
+        "href": "https://www.influenciainmobiliaria.com/"
+      }
+    ]
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Technology solutions for entrepreneurs and businesses ready to grow",
+    "items": [
+      {
+        "title": "Web Development",
+        "description": "Modern websites and web apps that convert visitors into customers."
+      },
+      {
+        "title": "SaaS Software",
+        "description": "Scalable software-as-a-service platforms tailored to your business model."
+      },
+      {
+        "title": "E-commerce",
+        "description": "Complete online stores with integrated payments and inventory management."
+      },
+      {
+        "title": "Mobile Apps",
+        "description": "Hybrid mobile apps that run on iOS and Android."
+      },
+      {
+        "title": "Automation",
+        "description": "Automate processes and connect your tools to save time."
+      },
+      {
+        "title": "Custom Software",
+        "description": "Tailored development for your business's unique challenges."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Have a project",
+    "titleEmphasis": "in mind?",
+    "description": "I'd love to hear about your idea. Book a free call and let's explore how I can help.",
+    "ctaPrimary": "Book a call",
+    "ctaSecondary": "Send email",
+    "footer": "© 2024 Jose Manuel Veliz. All rights reserved."
+  }
+}

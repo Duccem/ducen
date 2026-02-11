@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Download } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const skills = [
   "React",
@@ -14,6 +15,8 @@ const skills = [
 ];
 
 export const HeroSection = () => {
+  const t = useTranslations("hero");
+
   const scrollToProjects = () => {
     const element = document.querySelector("#projects");
     if (element) {
@@ -36,7 +39,7 @@ export const HeroSection = () => {
               transition={{ duration: 0.6 }}
               className="text-muted-foreground font-medium mb-4"
             >
-              Hola, soy
+              {t("greeting")}
             </motion.p>
 
             <motion.h1
@@ -56,7 +59,7 @@ export const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl text-foreground font-medium mb-2"
             >
-              Desarrollador de Software
+              {t("role")}
             </motion.p>
 
             <motion.p
@@ -65,8 +68,7 @@ export const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.25 }}
               className="text-muted-foreground text-lg mb-8 max-w-md leading-relaxed"
             >
-              Creo software que impulsa negocios. Especializado en soluciones
-              SaaS y aplicaciones web para emprendedores y PYMEs.
+              {t("description")}
             </motion.p>
 
             {/* CTA Buttons */}
@@ -82,7 +84,7 @@ export const HeroSection = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  ¿Tienes un proyecto?
+                  {t("ctaPrimary")}
                 </a>
               </Button>
               <Link
@@ -92,7 +94,7 @@ export const HeroSection = () => {
               >
                 <Button variant="heroOutline" size="lg">
                   <Download size={18} />
-                  Mi CV
+                  {t("ctaSecondary")}
                 </Button>
               </Link>
             </motion.div>
@@ -124,7 +126,7 @@ export const HeroSection = () => {
               <div className="relative w-72 h-96 md:w-80 md:h-[28rem] lg:w-96 lg:h-[32rem] overflow-hidden rounded-3xl">
                 <img
                   src={"/images/portrait.jpg"}
-                  alt="José Manuel Véliz - Desarrollador de Software"
+                  alt={t("imageAlt")}
                   className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
                 />
               </div>

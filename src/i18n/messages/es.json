@@ -1,0 +1,154 @@
+{
+  "metadata": {
+    "title": "Jose Veliz | Desarrollador de Software",
+    "description": "Desarrollador de software enfocado en SaaS y aplicaciones web para emprendedores y PYMEs."
+  },
+  "nav": {
+    "items": [
+      {
+        "label": "Inicio",
+        "href": "#hero"
+      },
+      {
+        "label": "Sobre mí",
+        "href": "#about"
+      },
+      {
+        "label": "Proyectos",
+        "href": "#projects"
+      },
+      {
+        "label": "Servicios",
+        "href": "#services"
+      },
+      {
+        "label": "Contacto",
+        "href": "#contact"
+      }
+    ],
+    "cta": "Hablemos",
+    "switcherLabel": "Idioma",
+    "locales": [
+      {
+        "value": "en",
+        "label": "EN"
+      },
+      {
+        "value": "es",
+        "label": "ES"
+      }
+    ]
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "role": "Desarrollador de Software",
+    "description": "Creo software que impulsa negocios. Especializado en soluciones SaaS y aplicaciones web para emprendedores y PYMEs.",
+    "ctaPrimary": "¿Tienes un proyecto?",
+    "ctaSecondary": "Mi CV",
+    "imageAlt": "Jose Manuel Veliz - Desarrollador de Software"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "paragraph1": "Mi camino en el software comenzó con la curiosidad de entender cómo funcionan las cosas. Esa curiosidad se transformó en pasión por crear soluciones que realmente ayudan a los negocios a crecer.",
+    "paragraph2": "Me especializo en trabajar con emprendedores y pequeñas empresas que necesitan digitalizar sus operaciones. Entiendo que cada peso cuenta y que necesitas resultados, no promesas.",
+    "stats": [
+      {
+        "value": "10+",
+        "label": "Proyectos completados"
+      },
+      {
+        "value": "95%",
+        "label": "Clientes satisfechos"
+      },
+      {
+        "value": "7+",
+        "label": "Años de experiencia"
+      }
+    ],
+    "imageAlt": "Jose Manuel Veliz"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "titleEmphasis": "Seleccionados",
+    "roleLabel": "Rol",
+    "items": [
+      {
+        "number": "01",
+        "title": "Helsa",
+        "subtitle": "Sistema de gestión para clínicas de salud y doctores",
+        "description": "Plataforma integral que permitió a clínicas de salud digitalizar su gestión, reduciendo tiempos administrativos un 50% y mejorando la experiencia del paciente.",
+        "tech": [
+          "Next.js",
+          "TypeScript",
+          "PostgreSQL"
+        ],
+        "role": "Desarrollador Full Stack",
+        "href": "https://helsa-web.vercel.app"
+      },
+      {
+        "number": "02",
+        "title": "PartySplit",
+        "subtitle": "App de división de gastos para eventos sociales",
+        "description": "Aplicación móvil que facilita la división de gastos entre amigos durante eventos sociales, logrando simplificar el proceso y reducir conflictos financieros.",
+        "tech": [
+          "React Native",
+          "Expo",
+          "Supabase"
+        ],
+        "role": "Desarrollador Full Stack",
+        "href": "https://www.partysplit.app/"
+      },
+      {
+        "number": "03",
+        "title": "Influencer Inmobiliaria",
+        "subtitle": "Sistema de gestión para agentes inmobiliarios",
+        "description": "Plataforma diseñada para agentes inmobiliarios que optimiza la gestión de propiedades y clientes, incrementando las ventas en un 30% mediante herramientas de seguimiento y análisis.",
+        "tech": [
+          "NextJS",
+          "PayloadCMS",
+          "AWS"
+        ],
+        "role": "Desarrollador Full Stack",
+        "href": "https://www.influenciainmobiliaria.com/"
+      }
+    ]
+  },
+  "services": {
+    "title": "Servicios",
+    "subtitle": "Soluciones tecnológicas para emprendedores y negocios que buscan crecer",
+    "items": [
+      {
+        "title": "Desarrollo Web",
+        "description": "Sitios web modernos y aplicaciones web que convierten visitantes en clientes."
+      },
+      {
+        "title": "Software SaaS",
+        "description": "Plataformas de software como servicio escalables para tu modelo de negocio."
+      },
+      {
+        "title": "E-commerce",
+        "description": "Tiendas online completas con pagos integrados y gestión de inventario."
+      },
+      {
+        "title": "Apps Móviles",
+        "description": "Aplicaciones móviles híbridas que funcionan en iOS y Android."
+      },
+      {
+        "title": "Automatización",
+        "description": "Automatiza procesos y conecta tus herramientas para ahorrar tiempo."
+      },
+      {
+        "title": "Software a Medida",
+        "description": "Desarrollo personalizado para los desafíos únicos de tu negocio."
+      }
+    ]
+  },
+  "contact": {
+    "title": "¿Tienes un proyecto",
+    "titleEmphasis": "en mente?",
+    "description": "Me encantaría escuchar sobre tu idea. Agenda una llamada gratuita y exploremos cómo puedo ayudarte.",
+    "ctaPrimary": "Agendar llamada",
+    "ctaSecondary": "Enviar email",
+    "footer": "© 2024 Jose Manuel Veliz. Todos los derechos reservados."
+  }
+}

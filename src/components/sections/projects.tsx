@@ -2,41 +2,19 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-
-const projects = [
-  {
-    number: "01",
-    title: "Helsa",
-    subtitle: "Sistema de gestión para clinicas de salud y doctores",
-    description:
-      "Plataforma integral que permitió a clínicas de salud digitalizar su gestión, reduciendo tiempos administrativos un 50% y mejorando la experiencia del paciente.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL"],
-    role: "Full Stack Developer",
-    href: "https://helsa-web.vercel.app",
-  },
-  {
-    number: "02",
-    title: "PartySplit",
-    subtitle: "App de división de gastos para eventos sociales",
-    description:
-      "Aplicación móvil que facilita la división de gastos entre amigos durante eventos sociales, logrando simplificar el proceso y reducir conflictos financieros.",
-    tech: ["ReactNative", "Expo", "Supabase"],
-    role: "Full Stack Developer",
-    href: "https://www.partysplit.app/",
-  },
-  {
-    number: "03",
-    title: "Influencer Inmobiliaria",
-    subtitle: "Sistema de gestión para agentes inmobiliarios",
-    description:
-      "Plataforma diseñada para agentes inmobiliarios que optimiza la gestión de propiedades y clientes, incrementando las ventas en un 30% mediante herramientas de seguimiento y análisis.",
-    tech: ["NextJS", "PayloadCMS", "AWS"],
-    role: "Full Stack Developer",
-    href: "https://www.influenciainmobiliaria.com/",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export const ProjectsSection = () => {
+  const t = useTranslations("projects");
+  const projects = t.raw("items") as Array<{
+    number: string;
+    title: string;
+    subtitle: string;
+    description: string;
+    tech: string[];
+    role: string;
+    href: string;
+  }>;
   const { ref, isVisible } = useScrollAnimation(0.1);
 
   return (
@@ -52,9 +30,9 @@ export const ProjectsSection = () => {
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold tracking-tight"
           >
-            Proyectos
+            {t("title")}
             <br />
-            <span className="italic font-normal">Seleccionados</span>
+            <span className="italic font-normal">{t("titleEmphasis")}</span>
           </motion.h2>
         </motion.div>
 
@@ -96,7 +74,7 @@ export const ProjectsSection = () => {
                   {/* Role */}
                   <div className="mb-4">
                     <span className="text-xs uppercase tracking-wider text-background/50">
-                      Rol
+                      {t("roleLabel")}
                     </span>
                     <p className="text-accent font-medium">{project.role}</p>
                   </div>

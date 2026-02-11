@@ -3,16 +3,16 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
-
-const navItems = [
-  { label: "Inicio", href: "#hero" },
-  { label: "Sobre mí", href: "#about" },
-  { label: "Proyectos", href: "#projects" },
-  { label: "Servicios", href: "#services" },
-  { label: "Contacto", href: "#contact" },
-];
+import { useLocale, useTranslations } from "next-intl";
 
 export const Navigation = () => {
+  const t = useTranslations("nav");
+  const locale = useLocale();
+  const navItems = t.raw("items") as Array<{ label: string; href: string }>;
+  const localeOptions = t.raw("locales") as Array<{
+    value: string;
+    label: string;
+  }>;
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isDarkSection, setIsDarkSection] = useState(false);
@@ -53,6 +53,28 @@ export const Navigation = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
     setIsMobileOpen(false);
+  };
+
+  const setLocale = (nextLocale: string) => {
+    if (nextLocale === locale) {
+      return;
+    }
+
+    document.cookie = `locale=${nextLocale}; path=/; max-age=31536000; samesite=lax`;
+    window.location.reload();
+  };
+
+  const getLocaleButtonClass = (value: string) => {
+    const base =
+      "text-xs font-medium px-2.5 py-1 rounded-full border transition-colors";
+    const active = isDarkSection
+      ? "bg-background text-foreground border-background"
+      : "bg-foreground text-background border-foreground";
+    const inactive = isDarkSection
+      ? "border-background/50 text-background/80 hover:text-background hover:border-background"
+      : "border-border text-muted-foreground hover:text-foreground hover:border-foreground";
+
+    return `${base} ${value === locale ? active : inactive}`;
   };
 
   return (
@@ -113,7 +135,7 @@ export const Navigation = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-4">
             <Button
               variant={isDarkSection ? "heroLight" : "hero"}
               size="sm"
@@ -124,9 +146,25 @@ export const Navigation = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                Hablemos
+                {t("cta")}
               </a>
             </Button>
+            <div
+              className="flex items-center gap-2"
+              aria-label={t("switcherLabel")}
+            >
+              {localeOptions.map((option) => (
+                <button
+                  key={option.value}
+                  type="button"
+                  onClick={() => setLocale(option.value)}
+                  className={getLocaleButtonClass(option.value)}
+                  aria-pressed={option.value === locale}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -165,9 +203,25 @@ export const Navigation = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Hablemos
+                  {t("cta")}
                 </a>
               </Button>
+              <div
+                className="flex items-center gap-2 pt-2"
+                aria-label={t("switcherLabel")}
+              >
+                {localeOptions.map((option) => (
+                  <button
+                    key={option.value}
+                    type="button"
+                    onClick={() => setLocale(option.value)}
+                    className={getLocaleButtonClass(option.value)}
+                    aria-pressed={option.value === locale}
+                  >
+                    {option.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </motion.div>
         )}
