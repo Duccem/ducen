@@ -4,6 +4,7 @@ import { ArrowDown, Download } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 const skills = [
   "React",
@@ -124,8 +125,10 @@ export const HeroSection = () => {
             <div className="relative">
               {/* Main Image */}
               <div className="relative w-72 h-96 md:w-80 md:h-[28rem] lg:w-96 lg:h-[32rem] overflow-hidden rounded-3xl">
-                <img
-                  src={"/images/portrait.jpg"}
+                <Image
+                  src={"/images/portrait-2.jpg"}
+                  width={1000}
+                  height={500}
                   alt={t("imageAlt")}
                   className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
                 />

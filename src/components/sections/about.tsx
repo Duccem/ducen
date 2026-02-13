@@ -1,7 +1,9 @@
 "use client";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { useEffect, useMemo, useState } from "react";
 
 const skills = [
   "HTML5",
@@ -18,6 +20,23 @@ export const AboutSection = () => {
   const t = useTranslations("about");
   const stats = t.raw("stats") as Array<{ value: string; label: string }>;
   const { ref, isVisible } = useScrollAnimation(0.2);
+  const portraitSources = useMemo(
+    () => [
+      "/images/portrait-3.jpg",
+      "/images/portrait.jpg",
+      "/images/portrait-2.jpg",
+    ],
+    [],
+  );
+  const [portraitIndex, setPortraitIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setPortraitIndex((current) => (current + 1) % portraitSources.length);
+    }, 4000);
+
+    return () => window.clearInterval(intervalId);
+  }, [portraitSources.length]);
 
   return (
     <section
@@ -40,11 +59,24 @@ export const AboutSection = () => {
           >
             <div className="relative w-full max-w-md mx-auto">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden">
-                <img
-                  src={"/images/portrait-2.jpeg"}
-                  alt={t("imageAlt")}
-                  className="w-full h-full object-cover"
-                />
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={portraitSources[portraitIndex]}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="w-full h-full"
+                  >
+                    <Image
+                      src={portraitSources[portraitIndex]}
+                      width={1000}
+                      height={1000}
+                      alt={t("imageAlt")}
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.div>
+                </AnimatePresence>
               </div>
 
               {/* Skill tags floating around image */}
