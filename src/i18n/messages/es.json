@@ -26,6 +26,10 @@
         "href": "/#services"
       },
       {
+        "label": "Proceso",
+        "href": "/#process"
+      },
+      {
         "label": "Blog",
         "href": "/blog"
       },
@@ -204,6 +208,66 @@
       {
         "title": "Dashboard SaaS",
         "description": "El panel de control de tu producto construido desde cero: métricas, roles, facturación e integraciones sobre una arquitectura lista para escalar."
+      }
+    ]
+  },
+  "process": {
+    "title": "Proceso de trabajo",
+    "subtitle": "Cinco etapas, cada una con entregables concretos que quedan en tus manos",
+    "items": [
+      {
+        "title": "Definición y alcance",
+        "description": "Definimos las necesidades y los alcances del proyecto antes de escribir una sola línea de código, para que sepas qué se va a construir, en cuánto tiempo y a qué costo.",
+        "label": "Entregables",
+        "deliverables": [
+          "Documento de especificación de requisitos de software (SRS)",
+          "Documento de estimación de tiempos y costos",
+          "Acceso al tablero kanban del proyecto"
+        ]
+      },
+      {
+        "title": "Diseño y concepción",
+        "description": "Le damos forma al producto: cómo se ve, cómo está construido por dentro y cómo se organizan sus datos.",
+        "label": "Entregables",
+        "deliverables": [
+          "Mockups de UI, estilos de marca/proyecto y sistema de diseño",
+          "Diagrama y diseño de arquitectura",
+          "Diseño de base de datos y estructuras de datos"
+        ]
+      },
+      {
+        "title": "Desarrollo e iteración",
+        "description": "Construyo el producto por sprints, con entregas frecuentes que puedes revisar y probar a medida que avanza.",
+        "label": "Cómo funciona",
+        "deliverables": [
+          "Los entregables se estructuran y separan por sprints",
+          "Se configura el repositorio en GitHub y se inicia el desarrollo",
+          "Se generan tickets para el testing de las funcionalidades desarrolladas",
+          "Se mantienen entregas por sprint de las funcionalidades acordadas"
+        ]
+      },
+      {
+        "title": "Entrega y despliegue",
+        "description": "El producto sale a producción y todo lo necesario para operarlo y mantenerlo queda en tu poder.",
+        "label": "Entregables",
+        "deliverables": [
+          "Código fuente",
+          "Documentación técnica",
+          "Manuales de usuario",
+          "Configuración del ambiente de producción",
+          "Revisión y agendamiento del lanzamiento",
+          "Testeo de la versión preliminar"
+        ]
+      },
+      {
+        "title": "Mantenimiento y soporte",
+        "description": "Después del lanzamiento sigo acompañando el producto con horas de soporte mensuales.",
+        "label": "Qué incluye",
+        "deliverables": [
+          "Horas de soporte mensuales limitadas por desperfectos y errores de código",
+          "Horas de soporte mensuales para infraestructura o dudas",
+          "La adición, modificación o mejora de funcionalidades pasa de nuevo por el proceso de planificación y diseño"
+        ]
       }
     ]
   },

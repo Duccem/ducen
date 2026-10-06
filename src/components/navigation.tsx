@@ -28,6 +28,7 @@ export const Navigation = () => {
         "#experience",
         "#projects",
         "#services",
+        "#process",
         "#contact",
       ];
       const darkSections = ["#projects"];

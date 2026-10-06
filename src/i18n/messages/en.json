@@ -26,6 +26,10 @@
         "href": "/#services"
       },
       {
+        "label": "Process",
+        "href": "/#process"
+      },
+      {
         "label": "Blog",
         "href": "/blog"
       },
@@ -204,6 +208,66 @@
       {
         "title": "SaaS dashboard",
         "description": "The control panel of your product built from scratch: metrics, roles, billing and integrations on an architecture ready to scale."
+      }
+    ]
+  },
+  "process": {
+    "title": "How I work",
+    "subtitle": "Five stages, each with concrete deliverables that end up in your hands",
+    "items": [
+      {
+        "title": "Discovery and scope",
+        "description": "We define the needs and scope of the project before writing a single line of code, so you know what will be built, how long it will take and what it will cost.",
+        "label": "Deliverables",
+        "deliverables": [
+          "Software Requirements Specification (SRS) document",
+          "Time and cost estimation document",
+          "Access to the project's kanban board"
+        ]
+      },
+      {
+        "title": "Design and conception",
+        "description": "We give the product its shape: how it looks, how it is built under the hood and how its data is organized.",
+        "label": "Deliverables",
+        "deliverables": [
+          "UI mockups, brand/project styles and design system",
+          "Architecture diagram and design",
+          "Database design and data structures"
+        ]
+      },
+      {
+        "title": "Development and iteration",
+        "description": "I build the product in sprints, with frequent deliveries you can review and test as it moves forward.",
+        "label": "How it works",
+        "deliverables": [
+          "Deliverables are structured and split into sprints",
+          "The GitHub repository is set up and development starts",
+          "Tickets are created to test each feature that is developed",
+          "The agreed features are delivered sprint by sprint"
+        ]
+      },
+      {
+        "title": "Delivery and deployment",
+        "description": "The product goes to production and everything needed to run and maintain it is handed over to you.",
+        "label": "Deliverables",
+        "deliverables": [
+          "Source code",
+          "Technical documentation",
+          "User manuals",
+          "Production environment setup",
+          "Launch review and scheduling",
+          "Testing of the pre-release version"
+        ]
+      },
+      {
+        "title": "Maintenance and support",
+        "description": "After launch I keep supporting the product with monthly support hours.",
+        "label": "What's included",
+        "deliverables": [
+          "Limited monthly support hours for defects and code errors",
+          "Monthly support hours for infrastructure or questions",
+          "Adding, changing or improving features goes back through the planning and design process"
+        ]
       }
     ]
   },
