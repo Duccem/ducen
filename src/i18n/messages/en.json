@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Jose Veliz | Senior Full Stack Engineer · AI Agents, SaaS & Fintech",
-    "description": "Senior full stack engineer building AI agents, SaaS products and fintech integrations for startups and SMBs."
+    "description": "Senior full stack engineer building AI agents, SaaS products and fintech integrations for startups."
   },
   "nav": {
     "items": [
@@ -50,7 +50,7 @@
   "hero": {
     "greeting": "Hi, I'm",
     "role": "Senior Full Stack Engineer · AI Agents, SaaS & Fintech",
-    "description": "I build software that drives business growth. Specialized in SaaS solutions and web apps for entrepreneurs and SMBs.",
+    "description": "I build software that drives business growth. Specialized in SaaS solutions and web apps for entrepreneurs and startups.",
     "ctaPrimary": "Have a project?",
     "ctaSecondary": "My CV",
     "imageAlt": "Jose Manuel Veliz - Senior Full Stack Engineer · AI Agents, SaaS & Fintech"
@@ -58,7 +58,7 @@
   "about": {
     "title": "About me",
     "paragraph1": "My journey in software began with curiosity about how things work. That curiosity turned into a passion for building solutions that truly help businesses grow.",
-    "paragraph2": "I specialize in working with entrepreneurs and small businesses that need to digitize their operations. I know every dollar counts and you need results, not promises.",
+    "paragraph2": "I specialize in working with entrepreneurs and startups that need to digitize their operations. I know every dollar counts and you need results, not promises.",
     "stats": [
       {
         "value": "10+",

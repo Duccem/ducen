@@ -89,7 +89,7 @@ export const HeroSection = () => {
                 </a>
               </Button>
               <Link
-                href="/files/Jose Veliz CV - 2026.pdf"
+                href="/files/jose-veliz-cv.pdf"
                 target="_blank"
                 rel="noreferrer"
               >
