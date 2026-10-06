@@ -95,10 +95,6 @@ export const Navigation = () => {
           {/* Logo */}
           <motion.a
             href="#hero"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection("#hero");
-            }}
             className={`text-xl font-display font-semibold transition-colors ${
               isDarkSection && !isScrolled
                 ? "text-background"
@@ -117,10 +113,6 @@ export const Navigation = () => {
               <motion.a
                 key={item.label}
                 href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(item.href);
-                }}
                 className={`text-sm font-medium transition-colors duration-300 ${
                   isDarkSection && !isScrolled
                     ? "text-background/70 hover:text-background"
@@ -150,10 +142,7 @@ export const Navigation = () => {
                 {t("cta")}
               </a>
             </Button>
-            <div
-              className="flex items-center gap-2"
-              aria-label={t("switcherLabel")}
-            >
+            <div className="flex items-center gap-2">
               {localeOptions.map((option) => (
                 <button
                   key={option.value}
@@ -172,6 +161,7 @@ export const Navigation = () => {
           <button
             className={`md:hidden p-2 ${isDarkSection && !isScrolled ? "text-background" : ""}`}
             onClick={() => setIsMobileOpen(!isMobileOpen)}
+            type="button"
           >
             {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -207,10 +197,7 @@ export const Navigation = () => {
                   {t("cta")}
                 </a>
               </Button>
-              <div
-                className="flex items-center gap-2 pt-2"
-                aria-label={t("switcherLabel")}
-              >
+              <div className="flex items-center gap-2 pt-2">
                 {localeOptions.map((option) => (
                   <button
                     key={option.value}
