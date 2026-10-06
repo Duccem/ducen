@@ -7,27 +7,31 @@
     "items": [
       {
         "label": "Inicio",
-        "href": "#hero"
+        "href": "/#hero"
       },
       {
         "label": "Sobre mí",
-        "href": "#about"
+        "href": "/#about"
       },
       {
         "label": "Experiencia",
-        "href": "#experience"
+        "href": "/#experience"
       },
       {
         "label": "Proyectos",
-        "href": "#projects"
+        "href": "/#projects"
       },
       {
         "label": "Servicios",
-        "href": "#services"
+        "href": "/#services"
+      },
+      {
+        "label": "Blog",
+        "href": "/blog"
       },
       {
         "label": "Contacto",
-        "href": "#contact"
+        "href": "/#contact"
       }
     ],
     "cta": "Hablemos",
@@ -209,6 +213,22 @@
     "description": "Me encantaría escuchar sobre tu idea. Agenda una llamada gratuita y exploremos cómo puedo ayudarte.",
     "ctaPrimary": "Agendar llamada",
     "ctaSecondary": "Enviar email",
-    "footer": "© 2024 Jose Manuel Veliz. Todos los derechos reservados."
+    "footer": "© 2026 Jose Manuel Veliz. Todos los derechos reservados."
+  },
+  "blog": {
+    "metaTitle": "Blog | Jose Veliz",
+    "metaDescription": "Artículos sobre ingeniería de software, agentes de IA y construcción de productos SaaS.",
+    "eyebrow": "Blog",
+    "title": "Ideas y",
+    "titleEmphasis": "aprendizajes",
+    "description": "Notas sobre ingeniería de software, agentes de IA y lo que aprendo construyendo producto.",
+    "featured": "Más reciente",
+    "readingTime": "{minutes} min de lectura",
+    "readArticle": "Leer artículo",
+    "empty": "Todavía no hay artículos publicados. Vuelve pronto.",
+    "backToBlog": "Volver al blog",
+    "ctaTitle": "¿Te resultó útil?",
+    "ctaDescription": "Si tienes un proyecto en mente, hablemos.",
+    "ctaButton": "Hablemos"
   }
 }

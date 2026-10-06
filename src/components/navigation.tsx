@@ -48,14 +48,6 @@ export const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    setIsMobileOpen(false);
-  };
-
   const setLocale = (nextLocale: string) => {
     if (nextLocale === locale) {
       return;
@@ -94,7 +86,7 @@ export const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.a
-            href="#hero"
+            href="/"
             className={`text-xl font-display font-semibold transition-colors ${
               isDarkSection && !isScrolled
                 ? "text-background"
@@ -179,10 +171,7 @@ export const Navigation = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(item.href);
-                  }}
+                  onClick={() => setIsMobileOpen(false)}
                   className="text-muted-foreground hover:text-foreground transition-colors py-2"
                 >
                   {item.label}

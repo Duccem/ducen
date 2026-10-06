@@ -7,27 +7,31 @@
     "items": [
       {
         "label": "Home",
-        "href": "#hero"
+        "href": "/#hero"
       },
       {
         "label": "About",
-        "href": "#about"
+        "href": "/#about"
       },
       {
         "label": "Experience",
-        "href": "#experience"
+        "href": "/#experience"
       },
       {
         "label": "Projects",
-        "href": "#projects"
+        "href": "/#projects"
       },
       {
         "label": "Services",
-        "href": "#services"
+        "href": "/#services"
+      },
+      {
+        "label": "Blog",
+        "href": "/blog"
       },
       {
         "label": "Contact",
-        "href": "#contact"
+        "href": "/#contact"
       }
     ],
     "cta": "Let's talk",
@@ -209,6 +213,22 @@
     "description": "I'd love to hear about your idea. Book a free call and let's explore how I can help.",
     "ctaPrimary": "Book a call",
     "ctaSecondary": "Send email",
-    "footer": "© 2024 Jose Manuel Veliz. All rights reserved."
+    "footer": "© 2026 Jose Manuel Veliz. All rights reserved."
+  },
+  "blog": {
+    "metaTitle": "Blog | Jose Veliz",
+    "metaDescription": "Articles on software engineering, AI agents and building SaaS products.",
+    "eyebrow": "Blog",
+    "title": "Ideas &",
+    "titleEmphasis": "learnings",
+    "description": "Notes on software engineering, AI agents and what I learn while building products.",
+    "featured": "Latest",
+    "readingTime": "{minutes} min read",
+    "readArticle": "Read article",
+    "empty": "No articles published yet. Check back soon.",
+    "backToBlog": "Back to blog",
+    "ctaTitle": "Found this useful?",
+    "ctaDescription": "If you have a project in mind, let's talk.",
+    "ctaButton": "Let's talk"
   }
 }

@@ -2,6 +2,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -168,6 +169,49 @@
   .skill-tag {
     @apply px-4 py-2 text-sm font-medium border border-border rounded-full 
            transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background;
+  }
+
+  /* Blog code blocks (rehype-highlight tokens) */
+  .prose pre code.hljs {
+    @apply bg-transparent p-0;
+  }
+
+  .hljs-comment,
+  .hljs-quote {
+    @apply italic opacity-50;
+  }
+
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-literal,
+  .hljs-built_in,
+  .hljs-type {
+    color: oklch(0.8 0.12 300);
+  }
+
+  .hljs-string,
+  .hljs-attr,
+  .hljs-regexp,
+  .hljs-addition {
+    color: oklch(0.85 0.13 150);
+  }
+
+  .hljs-number,
+  .hljs-symbol,
+  .hljs-variable,
+  .hljs-template-variable {
+    color: oklch(0.83 0.12 70);
+  }
+
+  .hljs-title,
+  .hljs-section,
+  .hljs-name,
+  .hljs-function {
+    color: oklch(0.82 0.1 230);
+  }
+
+  .hljs-deletion {
+    color: oklch(0.75 0.15 25);
   }
 
   .skill-tag-dark {
