@@ -4,9 +4,13 @@ import matter from "gray-matter";
 
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 const WORDS_PER_MINUTE = 200;
+const DEFAULT_LOCALE = "es";
+// "<slug>.<locale>.md" is a translation; "<slug>.md" is the default locale.
+const FILE_NAME_PATTERN = /^(.+?)(?:\.(es|en))?\.md$/;
 
 export type PostMeta = {
   slug: string;
+  locale: string;
   title: string;
   description: string;
   date: string;
@@ -23,7 +27,12 @@ const toIsoDate = (value: unknown): string => {
 };
 
 const readPost = (fileName: string): (Post & { draft: boolean }) | null => {
-  const slug = fileName.replace(/\.md$/, "");
+  const match = fileName.match(FILE_NAME_PATTERN);
+  if (!match) {
+    return null;
+  }
+
+  const [, slug, locale = DEFAULT_LOCALE] = match;
   const raw = fs.readFileSync(path.join(BLOG_DIR, fileName), "utf8");
   const { data, content } = matter(raw);
 
@@ -36,6 +45,7 @@ const readPost = (fileName: string): (Post & { draft: boolean }) | null => {
 
   return {
     slug,
+    locale,
     title: String(data.title),
     description: data.description ? String(data.description) : "",
     date: toIsoDate(data.date),
@@ -47,25 +57,40 @@ const readPost = (fileName: string): (Post & { draft: boolean }) | null => {
   };
 };
 
-const readAllPosts = () => {
+// One post per slug: the requested locale, falling back to the default locale
+// and then to whatever translation exists.
+const readAllPosts = (locale: string) => {
   if (!fs.existsSync(BLOG_DIR)) {
     return [];
   }
 
-  return fs
+  const versions = fs
     .readdirSync(BLOG_DIR)
     .filter((fileName) => fileName.endsWith(".md"))
     .map(readPost)
     .filter((post) => post !== null)
-    .filter((post) => !post.draft || process.env.NODE_ENV !== "production")
-    .sort((a, b) => b.date.localeCompare(a.date));
+    .filter((post) => !post.draft || process.env.NODE_ENV !== "production");
+
+  const rank = (post: { locale: string }) =>
+    post.locale === locale ? 0 : post.locale === DEFAULT_LOCALE ? 1 : 2;
+  const bySlug = new Map<string, (typeof versions)[number]>();
+  for (const post of versions) {
+    const current = bySlug.get(post.slug);
+    if (!current || rank(post) < rank(current)) {
+      bySlug.set(post.slug, post);
+    }
+  }
+
+  return [...bySlug.values()].sort((a, b) => b.date.localeCompare(a.date));
 };
 
-export const getAllPosts = (): PostMeta[] =>
-  readAllPosts().map(({ content: _content, draft: _draft, ...meta }) => meta);
+export const getAllPosts = (locale: string): PostMeta[] =>
+  readAllPosts(locale).map(
+    ({ content: _content, draft: _draft, ...meta }) => meta,
+  );
 
-export const getPostBySlug = (slug: string): Post | null => {
-  const post = readAllPosts().find((item) => item.slug === slug);
+export const getPostBySlug = (slug: string, locale: string): Post | null => {
+  const post = readAllPosts(locale).find((item) => item.slug === slug);
   if (!post) {
     return null;
   }

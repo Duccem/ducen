@@ -15,7 +15,7 @@ type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = getPostBySlug(slug, await getLocale());
   if (!post) {
     return {};
   }
@@ -44,13 +44,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const locale = await getLocale();
+  const post = getPostBySlug(slug, locale);
   if (!post) {
     notFound();
   }
 
   const t = await getTranslations("blog");
-  const locale = await getLocale();
 
   return (
     <div className="min-h-screen bg-background">
@@ -69,7 +69,7 @@ export default async function BlogPostPage({ params }: Props) {
           </Link>
 
           {/* Header */}
-          <header className="mt-10 mb-12 animate-fade-up">
+          <header className="mt-10 mb-12 animate-fade-up" lang={post.locale}>
             <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
                 <span
@@ -107,7 +107,10 @@ export default async function BlogPostPage({ params }: Props) {
           )}
 
           {/* Content */}
-          <div className="prose prose-neutral prose-lg max-w-none animate-fade-in-delay-1 prose-headings:font-semibold prose-headings:tracking-tight prose-headings:scroll-mt-28 prose-a:underline-offset-4 prose-img:rounded-2xl prose-pre:rounded-2xl prose-pre:bg-foreground prose-pre:text-background">
+          <div
+            lang={post.locale}
+            className="prose prose-neutral prose-lg max-w-none animate-fade-in-delay-1 prose-headings:font-semibold prose-headings:tracking-tight prose-headings:scroll-mt-28 prose-a:underline-offset-4 prose-img:rounded-2xl prose-pre:rounded-2xl prose-pre:bg-foreground prose-pre:text-background"
+          >
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeSlug, rehypeHighlight]}
