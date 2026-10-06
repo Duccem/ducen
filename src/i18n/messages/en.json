@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Jose Veliz | Software Developer",
-    "description": "Software developer focused on SaaS and web apps for entrepreneurs and SMBs."
+    "title": "Jose Veliz | Senior Full Stack Engineer · AI Agents, SaaS & Fintech",
+    "description": "Senior full stack engineer building AI agents, SaaS products and fintech integrations for startups and SMBs."
   },
   "nav": {
     "items": [
@@ -12,6 +12,10 @@
       {
         "label": "About",
         "href": "#about"
+      },
+      {
+        "label": "Experience",
+        "href": "#experience"
       },
       {
         "label": "Projects",
@@ -41,11 +45,11 @@
   },
   "hero": {
     "greeting": "Hi, I'm",
-    "role": "Software Developer",
+    "role": "Senior Full Stack Engineer · AI Agents, SaaS & Fintech",
     "description": "I build software that drives business growth. Specialized in SaaS solutions and web apps for entrepreneurs and SMBs.",
     "ctaPrimary": "Have a project?",
     "ctaSecondary": "My CV",
-    "imageAlt": "Jose Manuel Veliz - Software Developer"
+    "imageAlt": "Jose Manuel Veliz - Senior Full Stack Engineer · AI Agents, SaaS & Fintech"
   },
   "about": {
     "title": "About me",
@@ -66,6 +70,74 @@
       }
     ],
     "imageAlt": "Jose Manuel Veliz"
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "Where I've built and shipped product",
+    "items": [
+      {
+        "role": "Founder Engineer",
+        "company": "Disso",
+        "location": "Belgium",
+        "period": "2024 – 2026",
+        "highlights": [
+          "Designed and built from scratch the main control dashboard for the core tool of Disso's threat management system.",
+          "Built AI agents and background processes for human risk analysis and management.",
+          "Owned architecture and delivery end to end as an early engineer."
+        ],
+        "metrics": [
+          {
+            "value": "4",
+            "label": "Organizations served"
+          },
+          {
+            "value": "10,000+",
+            "label": "Threats detected and blocked"
+          }
+        ]
+      },
+      {
+        "role": "Senior Full Stack Engineer",
+        "company": "Rappi",
+        "location": "Remote",
+        "period": "May 2022 – October 2024",
+        "highlights": [
+          "Led the migration of the restaurant support area to artificial intelligence models.",
+          "Worked on an infrastructure of 1,000+ microservices, keeping critical systems scalable and performant."
+        ],
+        "metrics": [
+          {
+            "value": "86%",
+            "label": "Tickets automated"
+          },
+          {
+            "value": "$30,000+",
+            "label": "Saved per month"
+          }
+        ]
+      },
+      {
+        "role": "Semi Senior Full Stack Engineer",
+        "company": "Circle SPA",
+        "location": "Remote",
+        "period": "November 2020 – May 2022",
+        "highlights": [
+          "Led development of web applications for financial projects, managing a team of 3 developers.",
+          "Built a reusable component library from scratch.",
+          "Designed and implemented APIs in Node.js and Python to integrate external payment and financial services."
+        ]
+      },
+      {
+        "role": "Backend Engineer",
+        "company": "Leiros SA",
+        "location": "Porlamar, Venezuela",
+        "period": "April 2020 – December 2020",
+        "highlights": [
+          "Designed and implemented a GraphQL API for the migration of the entire ERP platform to a new stack.",
+          "Built SQL reports for the company's analytics platform."
+        ]
+      }
+    ]
   },
   "projects": {
     "title": "Projects",
@@ -115,31 +187,19 @@
   },
   "services": {
     "title": "Services",
-    "subtitle": "Technology solutions for entrepreneurs and businesses ready to grow",
+    "subtitle": "Concrete packages with a clear scope, timeline and outcome",
     "items": [
       {
-        "title": "Web Development",
-        "description": "Modern websites and web apps that convert visitors into customers."
+        "title": "MVP in 6-8 weeks",
+        "description": "From idea to a product in your users' hands: web or mobile app, designed, built and deployed with a scope closed from day one."
       },
       {
-        "title": "SaaS Software",
-        "description": "Scalable software-as-a-service platforms tailored to your business model."
+        "title": "AI agent integration",
+        "description": "Agents and background automations wired into your product and data to take over support, analysis and repetitive operations."
       },
       {
-        "title": "E-commerce",
-        "description": "Complete online stores with integrated payments and inventory management."
-      },
-      {
-        "title": "Mobile Apps",
-        "description": "Hybrid mobile apps that run on iOS and Android."
-      },
-      {
-        "title": "Automation",
-        "description": "Automate processes and connect your tools to save time."
-      },
-      {
-        "title": "Custom Software",
-        "description": "Tailored development for your business's unique challenges."
+        "title": "SaaS dashboard",
+        "description": "The control panel of your product built from scratch: metrics, roles, billing and integrations on an architecture ready to scale."
       }
     ]
   },

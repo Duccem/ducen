@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Jose Veliz | Desarrollador de Software",
-    "description": "Desarrollador de software enfocado en SaaS y aplicaciones web para emprendedores y PYMEs."
+    "title": "Jose Veliz | Senior Full Stack Engineer · Agentes de IA, SaaS y Fintech",
+    "description": "Senior full stack engineer que construye agentes de IA, productos SaaS e integraciones fintech para startups y PYMEs."
   },
   "nav": {
     "items": [
@@ -12,6 +12,10 @@
       {
         "label": "Sobre mí",
         "href": "#about"
+      },
+      {
+        "label": "Experiencia",
+        "href": "#experience"
       },
       {
         "label": "Proyectos",
@@ -41,11 +45,11 @@
   },
   "hero": {
     "greeting": "Hola, soy",
-    "role": "Desarrollador de Software",
+    "role": "Senior Full Stack Engineer · Agentes de IA, SaaS y Fintech",
     "description": "Creo software que impulsa negocios. Especializado en soluciones SaaS y aplicaciones web para emprendedores y PYMEs.",
     "ctaPrimary": "¿Tienes un proyecto?",
     "ctaSecondary": "Mi CV",
-    "imageAlt": "Jose Manuel Veliz - Desarrollador de Software"
+    "imageAlt": "Jose Manuel Veliz - Senior Full Stack Engineer · Agentes de IA, SaaS y Fintech"
   },
   "about": {
     "title": "Sobre mí",
@@ -66,6 +70,74 @@
       }
     ],
     "imageAlt": "Jose Manuel Veliz"
+  },
+  "experience": {
+    "title": "Experiencia",
+    "subtitle": "Dónde he construido y lanzado producto",
+    "items": [
+      {
+        "role": "Founder Engineer",
+        "company": "Disso",
+        "location": "Bélgica",
+        "period": "2024 – 2026",
+        "highlights": [
+          "Diseñé y construí desde cero el dashboard de control principal de la herramienta central del sistema de gestión de amenazas de Disso.",
+          "Construí agentes de IA y procesos en segundo plano para el análisis y la gestión del riesgo humano.",
+          "Responsable de la arquitectura y la entrega de extremo a extremo como uno de los primeros ingenieros."
+        ],
+        "metrics": [
+          {
+            "value": "4",
+            "label": "Organizaciones atendidas"
+          },
+          {
+            "value": "10.000+",
+            "label": "Amenazas detectadas y bloqueadas"
+          }
+        ]
+      },
+      {
+        "role": "Senior Full Stack Engineer",
+        "company": "Rappi",
+        "location": "Remoto",
+        "period": "Mayo 2022 – Octubre 2024",
+        "highlights": [
+          "Lideré la migración del área de soporte a restaurantes a modelos de inteligencia artificial.",
+          "Trabajé sobre una infraestructura de más de 1.000 microservicios, manteniendo sistemas críticos escalables y con buen rendimiento."
+        ],
+        "metrics": [
+          {
+            "value": "86%",
+            "label": "Tickets automatizados"
+          },
+          {
+            "value": "$30.000+",
+            "label": "Ahorrados al mes"
+          }
+        ]
+      },
+      {
+        "role": "Semi Senior Full Stack Engineer",
+        "company": "Circle SPA",
+        "location": "Remoto",
+        "period": "Noviembre 2020 – Mayo 2022",
+        "highlights": [
+          "Lideré el desarrollo de aplicaciones web para proyectos financieros, gestionando un equipo de 3 desarrolladores.",
+          "Construí desde cero una librería de componentes reutilizables.",
+          "Diseñé e implementé APIs en Node.js y Python para integrar servicios externos de pagos y financieros."
+        ]
+      },
+      {
+        "role": "Backend Engineer",
+        "company": "Leiros SA",
+        "location": "Porlamar, Venezuela",
+        "period": "Abril 2020 – Diciembre 2020",
+        "highlights": [
+          "Diseñé e implementé una API GraphQL para la migración de toda la plataforma ERP a un nuevo stack.",
+          "Construí reportes SQL para la plataforma de analítica de la empresa."
+        ]
+      }
+    ]
   },
   "projects": {
     "title": "Proyectos",
@@ -115,31 +187,19 @@
   },
   "services": {
     "title": "Servicios",
-    "subtitle": "Soluciones tecnológicas para emprendedores y negocios que buscan crecer",
+    "subtitle": "Paquetes concretos con alcance, plazo y resultado claros",
     "items": [
       {
-        "title": "Desarrollo Web",
-        "description": "Sitios web modernos y aplicaciones web que convierten visitantes en clientes."
+        "title": "MVP en 6-8 semanas",
+        "description": "De la idea a un producto en manos de tus usuarios: app web o móvil diseñada, construida y desplegada con un alcance cerrado desde el primer día."
       },
       {
-        "title": "Software SaaS",
-        "description": "Plataformas de software como servicio escalables para tu modelo de negocio."
+        "title": "Integración de agentes de IA",
+        "description": "Agentes y automatizaciones en segundo plano conectados a tu producto y tus datos para asumir soporte, análisis y operaciones repetitivas."
       },
       {
-        "title": "E-commerce",
-        "description": "Tiendas online completas con pagos integrados y gestión de inventario."
-      },
-      {
-        "title": "Apps Móviles",
-        "description": "Aplicaciones móviles híbridas que funcionan en iOS y Android."
-      },
-      {
-        "title": "Automatización",
-        "description": "Automatiza procesos y conecta tus herramientas para ahorrar tiempo."
-      },
-      {
-        "title": "Software a Medida",
-        "description": "Desarrollo personalizado para los desafíos únicos de tu negocio."
+        "title": "Dashboard SaaS",
+        "description": "El panel de control de tu producto construido desde cero: métricas, roles, facturación e integraciones sobre una arquitectura lista para escalar."
       }
     ]
   },

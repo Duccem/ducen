@@ -4,7 +4,8 @@ export const runtime = "edge";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const ogText = "Jose Veliz | Software developer";
+const ogText =
+  "Jose Veliz | Senior Full Stack Engineer · AI Agents, SaaS & Fintech";
 const [ogName, ogRole] = ogText.split("|").map((part) => part.trim());
 
 export default function OpenGraphImage() {
@@ -91,7 +92,7 @@ export default function OpenGraphImage() {
             lineHeight: 1.2,
           }}
         >
-          {ogRole ?? "Software developer"}
+          {ogRole ?? "Senior Full Stack Engineer"}
         </div>
       </div>
     </div>,

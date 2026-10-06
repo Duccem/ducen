@@ -25,6 +25,7 @@ export const Navigation = () => {
       const sections = [
         "#hero",
         "#about",
+        "#experience",
         "#projects",
         "#services",
         "#contact",

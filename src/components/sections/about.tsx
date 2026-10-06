@@ -18,7 +18,6 @@ const skills = [
 
 export const AboutSection = () => {
   const t = useTranslations("about");
-  const stats = t.raw("stats") as Array<{ value: string; label: string }>;
   const { ref, isVisible } = useScrollAnimation(0.2);
   const portraitSources = useMemo(
     () => [
@@ -131,25 +130,6 @@ export const AboutSection = () => {
             >
               {t("paragraph2")}
             </motion.p>
-
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.3 }}
-              className="flex gap-12"
-            >
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-3xl md:text-4xl font-display font-semibold text-foreground">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-muted-foreground mt-1">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </motion.div>
           </div>
         </motion.div>
       </div>

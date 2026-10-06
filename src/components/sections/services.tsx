@@ -1,13 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import {
-  Globe,
-  Smartphone,
-  Database,
-  ShoppingCart,
-  BarChart3,
-  Cog,
-} from "lucide-react";
+import { Rocket, Bot, LayoutDashboard } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useTranslations } from "next-intl";
 
@@ -18,7 +11,7 @@ export const ServicesSection = () => {
     description: string;
   }>;
   const { ref, isVisible } = useScrollAnimation(0.1);
-  const icons = [Globe, Database, ShoppingCart, Smartphone, BarChart3, Cog];
+  const icons = [Rocket, Bot, LayoutDashboard];
 
   return (
     <section
