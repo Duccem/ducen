@@ -1,164 +1,83 @@
 "use client";
-import { motion } from "framer-motion";
-import { ArrowDown, Download } from "lucide-react";
-import { Button } from "../ui/button";
-import Link from "next/link";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
-
-const skills = [
-  "React",
-  "Node.js",
-  "TypeScript",
-  "Python",
-  "PostgreSQL",
-  "AWS",
-];
+import { useRef } from "react";
+import { CAL_URL } from "@/lib/site";
+import { Navigation } from "../navigation";
 
 export const HeroSection = () => {
   const t = useTranslations("hero");
-
-  const scrollToProjects = () => {
-    const element = document.querySelector("#projects");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const ref = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const scale = useTransform(scrollYProgress, [0, 1], [1, reduce ? 1 : 0.93]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", reduce ? "0%" : "6%"]);
 
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center bg-background relative overflow-hidden"
+      ref={ref}
+      className="relative min-h-svh overflow-hidden flex flex-col"
     >
-      <div className="container mx-auto px-6 lg:px-20 py-32">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Content */}
-          <div className="order-2 lg:order-1">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-muted-foreground font-medium mb-4"
-            >
-              {t("greeting")}
-            </motion.p>
+      <Navigation />
 
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold leading-[1.1] mb-6"
-            >
-              José Manuel
-              <br />
-              <span className="italic font-normal">Véliz</span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-foreground font-medium mb-2"
-            >
-              {t("role")}
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25 }}
-              className="text-muted-foreground text-lg mb-8 max-w-md leading-relaxed"
-            >
-              {t("description")}
-            </motion.p>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap gap-4 mb-12"
-            >
-              <Button variant="hero" size="lg" asChild>
-                <a
-                  href="https://cal.com/jose-manuel-veliz/15min"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {t("ctaPrimary")}
-                </a>
-              </Button>
-              <Link
-                href="/files/jose-veliz-cv.pdf"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button variant="heroOutline" size="lg">
-                  <Download size={18} />
-                  {t("ctaSecondary")}
-                </Button>
-              </Link>
-            </motion.div>
-
-            {/* Skills */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-wrap gap-3"
-            >
-              {skills.map((skill) => (
-                <span key={skill} className="skill-tag">
-                  {skill}
-                </span>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Right Column - Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="order-1 lg:order-2 flex justify-center lg:justify-end"
+      <div className="page-x relative z-10 mt-16 md:mt-14 max-w-[55%] md:max-w-none">
+        <p
+          className="hero-rise text-body md:text-lead leading-[1.35] max-w-[34ch] text-ink"
+          style={{ animationDelay: "120ms" }}
+        >
+          {t("sentence")}
+        </p>
+        <div
+          className="hero-rise mt-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-8"
+          style={{ animationDelay: "220ms" }}
+        >
+          <a
+            className="btn self-start"
+            href={CAL_URL}
+            target="_blank"
+            rel="noreferrer"
           >
-            <div className="relative">
-              {/* Main Image */}
-              <div className="relative w-72 h-96 md:w-80 md:h-[28rem] lg:w-96 lg:h-[32rem] overflow-hidden rounded-3xl">
-                <Image
-                  src={"/images/portrait-2.jpg"}
-                  width={1000}
-                  height={500}
-                  alt={t("imageAlt")}
-                  className="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
-                />
-              </div>
-
-              {/* Decorative elements */}
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-stone-400 rounded-3xl" />
-              <div className="absolute -top-6 -right-6 w-16 h-16 bg-neutral-900 rounded-2xl" />
-            </div>
-          </motion.div>
+            <span className="md:hidden">{t("ctaShort")}</span>
+            <span className="hidden md:inline">{t("cta")}</span>
+            <span aria-hidden="true" className="btn-arrow">
+              →
+            </span>
+          </a>
+          <a href="#work" className="text-link text-body">
+            {t("secondary")}
+          </a>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* The monument: one word, cropped by the edges of the screen */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        aria-hidden="true"
+        style={{ scale, y }}
+        className="pointer-events-none select-none origin-bottom
+          absolute right-0 top-0 bottom-0 flex items-center justify-end
+          md:static md:mt-auto md:block"
       >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="flex flex-col items-center gap-2 text-muted-foreground cursor-pointer"
-          onClick={scrollToProjects}
+        <span
+          className="hero-rise block font-semibold text-ink whitespace-nowrap
+            leading-[0.8] tracking-[-0.06em]
+            text-[78vw] [writing-mode:vertical-rl] translate-x-[22%]
+            md:[writing-mode:horizontal-tb] md:translate-x-0
+            md:text-[clamp(300px,60vw,1100px)] md:-ml-[8vw] md:mb-[-0.17em]"
+          style={{ animationDelay: "40ms" }}
         >
-          <ArrowDown size={20} />
-        </motion.div>
+          {t("word")}
+        </span>
       </motion.div>
+      <h1 className="sr-only">José Manuel Véliz — {t("sentence")}</h1>
     </section>
   );
 };
-

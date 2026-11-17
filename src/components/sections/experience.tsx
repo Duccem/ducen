@@ -1,102 +1,107 @@
 "use client";
-import { motion } from "framer-motion";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useTranslations } from "next-intl";
+
+type Job = {
+  company: string;
+  role: string;
+  location: string;
+  period: string;
+  highlight: string;
+};
 
 export const ExperienceSection = () => {
   const t = useTranslations("experience");
-  const jobs = t.raw("items") as Array<{
-    role: string;
-    company: string;
-    location: string;
-    period: string;
-    highlights: string[];
-    metrics?: Array<{ value: string; label: string }>;
-  }>;
-  const { ref, isVisible } = useScrollAnimation(0.1);
+  const jobs = t.raw("items") as Job[];
+  const stats = t.raw("stats") as Array<{ value: string; label: string }>;
+  const names = jobs.map((job) => job.company);
+
+  const line = (
+    <span className="flex shrink-0 items-center">
+      {names.map((name) => (
+        <span key={name} className="flex items-center">
+          <span className="px-[0.35em]">{name}</span>
+          <span
+            aria-hidden="true"
+            className="inline-block size-[0.24em] rounded-full bg-current"
+          />
+        </span>
+      ))}
+    </span>
+  );
 
   return (
-    <section
-      id="experience"
-      className="section-container bg-background relative overflow-hidden"
-    >
-      <div className="container mx-auto relative z-10">
-        {/* Header */}
-        <motion.div ref={ref} className="mb-20">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            className="text-4xl md:text-5xl font-display font-semibold mb-6"
-          >
-            {t("title")}
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.1 }}
-            className="text-muted-foreground text-lg max-w-xl"
-          >
-            {t("subtitle")}
-          </motion.p>
-        </motion.div>
-
-        {/* Experience List */}
-        <div className="space-y-12">
-          {jobs.map((job, index) => (
-            <motion.div
-              key={`${job.company}-${job.period}`}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.1 + index * 0.1 }}
-              className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-start pb-12 border-b border-border last:border-b-0 last:pb-0"
-            >
-              {/* Period, Role & Company */}
-              <div className="lg:col-span-4">
-                <span className="text-accent font-mono text-sm">
-                  {job.period}
-                </span>
-                <h3 className="text-2xl font-display font-semibold mt-2 mb-1">
-                  {job.role}
-                </h3>
-                <p className="text-muted-foreground">
-                  {job.company} · {job.location}
-                </p>
-              </div>
-
-              {/* Highlights */}
-              <div className="lg:col-span-8">
-                <ul className="space-y-3">
-                  {job.highlights.map((highlight) => (
-                    <li
-                      key={highlight}
-                      className="flex gap-3 text-muted-foreground leading-relaxed"
-                    >
-                      <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-foreground" />
-                      {highlight}
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Metrics */}
-                {job.metrics && (
-                  <div className="flex flex-wrap gap-x-12 gap-y-6 mt-8">
-                    {job.metrics.map((metric) => (
-                      <div key={metric.label}>
-                        <div className="text-3xl font-display font-semibold text-foreground">
-                          {metric.value}
-                        </div>
-                        <div className="text-sm text-muted-foreground mt-1">
-                          {metric.label}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </motion.div>
-          ))}
+    <section id="experience">
+      {/* Names running off the edges */}
+      <div
+        aria-hidden="true"
+        className="bg-surface overflow-hidden h-[22vh] md:h-[34vh] flex items-center"
+      >
+        <div className="marquee-track flex w-max whitespace-nowrap text-[15vw] md:text-[8vw] font-semibold tracking-[-0.045em] leading-none">
+          {line}
+          {line}
+          {line}
+          {line}
         </div>
+      </div>
+      <p data-reveal className="page-x mt-6 text-body max-w-[60ch]">
+        {t("band")}
+      </p>
+
+      {/* The line-up */}
+      <div className="page-x pt-[clamp(96px,12vw,180px)]">
+        <h2 data-reveal className="text-head tracking-[-0.04em]">
+          {t("title")}
+        </h2>
+
+        <table className="mt-12 w-full text-left [font-variant-numeric:tabular-nums]">
+          <caption className="sr-only">{t("title")}</caption>
+          <tbody>
+            {jobs.map((job, i) => (
+              <tr
+                key={job.company}
+                data-reveal
+                style={{ "--i": i } as React.CSSProperties}
+                className="group block md:table-row align-top"
+              >
+                <td className="block md:table-cell md:w-[30%] pt-6 md:py-4 text-lead font-semibold tracking-[-0.03em] leading-tight">
+                  {job.company}
+                </td>
+                <td className="block md:table-cell md:w-[40%] md:py-4 pr-6">
+                  <span className="block text-body md:text-lead md:tracking-[-0.03em] md:leading-tight">
+                    {job.role}
+                  </span>
+                  <span className="mt-1 block text-body text-soft max-w-[52ch]">
+                    {job.highlight}
+                  </span>
+                </td>
+                <td className="inline md:table-cell md:py-4 text-small md:text-lead md:tracking-[-0.03em] text-soft md:text-ink">
+                  {job.location}
+                  <span className="md:hidden"> · </span>
+                </td>
+                <td className="inline md:table-cell md:py-4 text-small md:text-lead md:tracking-[-0.03em] md:text-right text-soft md:text-ink whitespace-nowrap">
+                  {job.period}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        {/* What that work produced */}
+        <dl className="mt-[clamp(80px,10vw,140px)] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
+          {stats.map((stat, i) => (
+            <div
+              key={stat.label}
+              data-reveal
+              style={{ "--i": i } as React.CSSProperties}
+            >
+              <dt className="sr-only">{stat.label}</dt>
+              <dd className="text-[clamp(44px,5.6vw,92px)] font-semibold tracking-[-0.05em] leading-none">
+                {stat.value}
+              </dd>
+              <dd className="mt-3 text-body max-w-[24ch]">{stat.label}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

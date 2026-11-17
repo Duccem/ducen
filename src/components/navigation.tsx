@@ -1,210 +1,120 @@
 "use client";
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
-import { Button } from "./ui/button";
 import { useLocale, useTranslations } from "next-intl";
+import { useState } from "react";
 
-export const Navigation = () => {
+import { CAL_URL } from "@/lib/site";
+
+export const LocaleSwitch = ({ className = "" }: { className?: string }) => {
   const t = useTranslations("nav");
   const locale = useLocale();
-  const navItems = t.raw("items") as Array<{ label: string; href: string }>;
-  const localeOptions = t.raw("locales") as Array<{
-    value: string;
-    label: string;
-  }>;
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [isDarkSection, setIsDarkSection] = useState(false);
+  const options = t.raw("locales") as Array<{ value: string; label: string }>;
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-
-      // Check which section we're in for nav color
-      const sections = [
-        "#hero",
-        "#about",
-        "#experience",
-        "#projects",
-        "#services",
-        "#process",
-        "#contact",
-      ];
-      const darkSections = ["#projects"];
-
-      for (const sectionId of sections) {
-        const section = document.querySelector(sectionId);
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom > 100) {
-            setIsDarkSection(darkSections.includes(sectionId));
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const setLocale = (nextLocale: string) => {
-    if (nextLocale === locale) {
-      return;
-    }
-
-    document.cookie = `locale=${nextLocale}; path=/; max-age=31536000; samesite=lax`;
+  const setLocale = (next: string) => {
+    if (next === locale) return;
+    document.cookie = `locale=${next}; path=/; max-age=31536000; samesite=lax`;
     window.location.reload();
   };
 
-  const getLocaleButtonClass = (value: string) => {
-    const base =
-      "text-xs font-medium px-2.5 py-1 rounded-full border transition-colors";
-    const active = isDarkSection
-      ? "bg-background text-foreground border-background"
-      : "bg-foreground text-background border-foreground";
-    const inactive = isDarkSection
-      ? "border-background/50 text-background/80 hover:text-background hover:border-background"
-      : "border-border text-muted-foreground hover:text-foreground hover:border-foreground";
-
-    return `${base} ${value === locale ? active : inactive}`;
-  };
-
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? isDarkSection
-            ? "bg-foreground/90 backdrop-blur-xl"
-            : "bg-background/90 backdrop-blur-xl border-b border-border"
-          : ""
-      }`}
+    <fieldset
+      className={`flex items-center gap-3 text-small ${className}`}
+      aria-label={t("switcherLabel")}
     >
-      <div className="container mx-auto px-6 lg:px-20">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <motion.a
-            href="/"
-            className={`text-xl font-display font-semibold transition-colors ${
-              isDarkSection && !isScrolled
-                ? "text-background"
-                : isScrolled && isDarkSection
-                  ? "text-background"
-                  : "text-foreground"
-            }`}
-            whileHover={{ scale: 1.02 }}
-          >
-            José Manuel Véliz<span className="text-accent">.</span>
-          </motion.a>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-10">
-            {navItems.map((item) => (
-              <motion.a
-                key={item.label}
-                href={item.href}
-                className={`text-sm font-medium transition-colors duration-300 ${
-                  isDarkSection && !isScrolled
-                    ? "text-background/70 hover:text-background"
-                    : isScrolled && isDarkSection
-                      ? "text-background/70 hover:text-background"
-                      : "text-muted-foreground hover:text-foreground"
-                }`}
-                whileHover={{ y: -2 }}
-              >
-                {item.label}
-              </motion.a>
-            ))}
-          </div>
-
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center gap-4">
-            <Button
-              variant={isDarkSection ? "heroLight" : "hero"}
-              size="sm"
-              asChild
-            >
-              <a
-                href="https://cal.com/jose-manuel-veliz/15min"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {t("cta")}
-              </a>
-            </Button>
-            <div className="flex items-center gap-2">
-              {localeOptions.map((option) => (
-                <button
-                  key={option.value}
-                  type="button"
-                  onClick={() => setLocale(option.value)}
-                  className={getLocaleButtonClass(option.value)}
-                  aria-pressed={option.value === locale}
-                >
-                  {option.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className={`md:hidden p-2 ${isDarkSection && !isScrolled ? "text-background" : ""}`}
-            onClick={() => setIsMobileOpen(!isMobileOpen)}
-            type="button"
-          >
-            {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="md:hidden py-6 border-t border-border bg-background"
-          >
-            <div className="flex flex-col gap-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setIsMobileOpen(false)}
-                  className="text-muted-foreground hover:text-foreground transition-colors py-2"
-                >
-                  {item.label}
-                </a>
-              ))}
-              <Button variant="hero" className="mt-4" asChild>
-                <a
-                  href="https://cal.com/jose-manuel-veliz/15min"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {t("cta")}
-                </a>
-              </Button>
-              <div className="flex items-center gap-2 pt-2">
-                {localeOptions.map((option) => (
-                  <button
-                    key={option.value}
-                    type="button"
-                    onClick={() => setLocale(option.value)}
-                    className={getLocaleButtonClass(option.value)}
-                    aria-pressed={option.value === locale}
-                  >
-                    {option.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </div>
-    </motion.nav>
+      {options.map((option) => (
+        <button
+          key={option.value}
+          type="button"
+          onClick={() => setLocale(option.value)}
+          aria-pressed={option.value === locale}
+          className={`transition-colors ${
+            option.value === locale
+              ? "text-ink underline underline-offset-4"
+              : "text-soft hover:text-ink"
+          }`}
+        >
+          {option.label}
+        </button>
+      ))}
+    </fieldset>
   );
 };
 
+/**
+ * A plain bar that sits on the page (not fixed): wordmark, a few links, one
+ * action. On the home page it overlays the top of the hero.
+ */
+export const Navigation = () => {
+  const t = useTranslations("nav");
+  const items = t.raw("items") as Array<{ label: string; href: string }>;
+  const [open, setOpen] = useState(false);
+
+  return (
+    <header className="page-x relative z-30 flex items-start justify-between gap-6 pt-6">
+      <a
+        href="/"
+        className="font-medium tracking-tight text-body hover:text-soft transition-colors"
+      >
+        José Manuel Véliz
+      </a>
+
+      <nav className="hidden md:flex items-center gap-8" aria-label="Main">
+        {items.map((item) => (
+          <a
+            key={item.href}
+            href={item.href}
+            className="text-body text-ink hover:text-soft transition-colors"
+          >
+            {item.label}
+          </a>
+        ))}
+        <LocaleSwitch />
+      </nav>
+
+      <button
+        type="button"
+        className="md:hidden text-body underline underline-offset-4"
+        aria-expanded={open}
+        aria-controls="mobile-menu"
+        onClick={() => setOpen((v) => !v)}
+      >
+        {open ? t("close") : t("menu")}
+      </button>
+
+      {open && (
+        <div
+          id="mobile-menu"
+          className="md:hidden fixed inset-0 z-40 bg-ground page-x pt-6 pb-10 flex flex-col"
+        >
+          <div className="flex justify-between">
+            <span className="font-medium">José Manuel Véliz</span>
+            <button
+              type="button"
+              className="text-body underline underline-offset-4"
+              onClick={() => setOpen(false)}
+            >
+              {t("close")}
+            </button>
+          </div>
+          <nav className="mt-16 flex flex-col gap-2" aria-label="Mobile">
+            {items.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="text-[2.75rem] font-semibold tracking-[-0.04em] leading-tight"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+          <div className="mt-auto flex items-center justify-between gap-4">
+            <a className="btn" href={CAL_URL} target="_blank" rel="noreferrer">
+              {t("cta")}
+            </a>
+            <LocaleSwitch />
+          </div>
+        </div>
+      )}
+    </header>
+  );
+};

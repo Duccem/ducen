@@ -1,78 +1,70 @@
 "use client";
-import { motion } from "framer-motion";
-import { Rocket, Bot, LayoutDashboard } from "lucide-react";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
+
+type Group = { title: string; description: string; items: string[] };
 
 export const ServicesSection = () => {
   const t = useTranslations("services");
-  const services = t.raw("items") as Array<{
-    title: string;
-    description: string;
-  }>;
-  const { ref, isVisible } = useScrollAnimation(0.1);
-  const icons = [Rocket, Bot, LayoutDashboard];
+  const groups = t.raw("groups") as Group[];
+  const [focus, setFocus] = useState(0);
+
+  const starts = ["md:col-start-1", "md:col-start-4", "md:col-start-7"];
 
   return (
+    // biome-ignore lint/a11y/noStaticElementInteractions: hover only resets a decorative read-out
     <section
       id="services"
-      className="section-container bg-background relative overflow-hidden"
+      className="page-x py-[clamp(120px,20vh,240px)]"
+      onMouseLeave={() => setFocus(0)}
     >
-      <div className="container mx-auto relative z-10">
-        {/* Header */}
-        <motion.div ref={ref} className="text-center mb-20">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            className="text-4xl md:text-5xl font-display font-semibold mb-6"
+      <h2 data-reveal className="text-head tracking-[-0.04em] max-w-[14ch]">
+        {t("title")}
+      </h2>
+
+      <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-12">
+        {groups.map((group, g) => (
+          // biome-ignore lint/a11y/noStaticElementInteractions: hover/focus preview; the same text is in the list
+          <div
+            key={group.title}
+            data-reveal
+            style={{ "--i": g + 1 } as React.CSSProperties}
+            className={`md:col-span-3 ${starts[g]}`}
+            onMouseEnter={() => setFocus(g)}
+            onFocus={() => setFocus(g)}
           >
-            {t("title")}
-          </motion.h2>
+            <h3 className="text-lead tracking-[-0.02em] leading-tight font-semibold">
+              {group.title}
+            </h3>
+            <ul className="mt-6 space-y-1.5">
+              {group.items.map((item) => (
+                <li
+                  key={item}
+                  className={`text-body leading-[1.3] transition-colors duration-200 ${
+                    focus === g ? "text-ink" : "text-soft"
+                  }`}
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="md:hidden mt-5 text-body text-soft">
+              {group.description}
+            </p>
+          </div>
+        ))}
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.1 }}
-            className="text-muted-foreground text-lg max-w-xl mx-auto"
-          >
-            {t("subtitle")}
-          </motion.p>
-        </motion.div>
-
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => {
-            const Icon = icons[index % icons.length];
-
-            return (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.1 + index * 0.1 }}
-                className="group"
-              >
-                <div className="elegant-card p-8 h-full hover:border-foreground transition-all duration-500">
-                  {/* Icon */}
-                  <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mb-6 group-hover:bg-foreground group-hover:text-background transition-all duration-300">
-                    <Icon className="w-6 h-6" />
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="text-xl font-display font-semibold mb-3">
-                    {service.title}
-                  </h3>
-
-                  <p className="text-muted-foreground leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
+        {/* The fixed spot that reads out the hovered group */}
+        <div
+          className="hidden md:block md:col-start-10 md:col-span-3"
+          aria-live="polite"
+        >
+          <p className="text-body text-ink min-h-[7lh]">
+            {groups[focus]?.description}
+          </p>
+          <p className="mt-4 text-small text-soft">{t("hint")}</p>
         </div>
       </div>
     </section>
   );
 };
-

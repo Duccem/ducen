@@ -1,4 +1,3 @@
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -8,8 +7,9 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import { Navigation } from "@/components/navigation";
-import { Button } from "@/components/ui/button";
+import { SiteFooter } from "@/components/sections/contact";
 import { formatPostDate, getPostBySlug } from "@/lib/blog";
+import { CAL_URL } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const images = [post.cover ?? "/opengraph-image"];
 
   return {
-    title: `${post.title} | Jose Veliz`,
+    title: `${post.title} | José Véliz`,
     description: post.description,
     openGraph: {
       title: post.title,
@@ -53,48 +53,47 @@ export default async function BlogPostPage({ params }: Props) {
   const t = await getTranslations("blog");
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
       <Navigation />
-      <main className="container mx-auto px-6 lg:px-20 pt-36 pb-32">
-        <article className="max-w-3xl mx-auto">
+      <main className="page-x pt-[clamp(64px,8vw,120px)] pb-[clamp(96px,12vw,180px)]">
+        <article className="max-w-[46rem] mx-auto">
           <Link
             href="/blog"
-            className="group inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="group inline-flex items-center gap-2 text-body text-soft hover:text-ink transition-colors"
           >
-            <ArrowLeft
-              size={16}
-              className="group-hover:-translate-x-1 transition-transform"
-            />
+            <span
+              aria-hidden="true"
+              className="transition-transform group-hover:-translate-x-1"
+            >
+              ←
+            </span>
             {t("backToBlog")}
           </Link>
 
-          {/* Header */}
-          <header className="mt-10 mb-12 animate-fade-up" lang={post.locale}>
-            <div className="flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 text-xs font-medium border border-border rounded-full text-muted-foreground"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-            <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-display font-semibold tracking-tight leading-tight">
+          <header className="mt-12 mb-14" lang={post.locale}>
+            <h1
+              data-reveal
+              style={{ "--i": 1 } as React.CSSProperties}
+              className="text-[clamp(30px,3.4vw,48px)] tracking-[-0.04em] leading-[1.05]"
+            >
               {post.title}
             </h1>
             {post.description && (
-              <p className="mt-6 text-xl text-muted-foreground leading-relaxed">
+              <p
+                data-reveal
+                style={{ "--i": 2 } as React.CSSProperties}
+                className="mt-8 text-lead leading-[1.4]"
+              >
                 {post.description}
               </p>
             )}
-            <div className="mt-8 pt-6 border-t border-border flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-wider text-muted-foreground">
+            <p className="mt-8 text-small text-soft">
               <time dateTime={post.date}>
                 {formatPostDate(post.date, locale)}
-              </time>
-              <span aria-hidden="true">·</span>
-              <span>{t("readingTime", { minutes: post.readingMinutes })}</span>
-            </div>
+              </time>{" "}
+              · {t("readingTime", { minutes: post.readingMinutes })}
+              {post.tags.length > 0 && ` · ${post.tags.join(", ")}`}
+            </p>
           </header>
 
           {post.cover && (
@@ -102,14 +101,20 @@ export default async function BlogPostPage({ params }: Props) {
             <img
               src={post.cover}
               alt=""
-              className="w-full aspect-video object-cover rounded-2xl border border-border mb-12"
+              className="w-full aspect-video object-cover mb-14"
             />
           )}
 
-          {/* Content */}
           <div
             lang={post.locale}
-            className="prose prose-neutral prose-lg max-w-none animate-fade-in-delay-1 prose-headings:font-semibold prose-headings:tracking-tight prose-headings:scroll-mt-28 prose-a:underline-offset-4 prose-img:rounded-2xl prose-pre:rounded-2xl prose-pre:bg-foreground prose-pre:text-background"
+            className="prose prose-invert prose-lg max-w-none
+              prose-p:text-ink prose-li:text-ink prose-strong:text-ink
+              prose-headings:font-semibold prose-headings:tracking-[-0.03em] prose-headings:scroll-mt-10 prose-headings:text-ink
+              prose-a:text-ink prose-a:underline-offset-4
+              prose-hr:hidden
+              prose-pre:rounded-none prose-pre:bg-surface prose-pre:text-ink
+              prose-code:text-ink prose-code:before:content-none prose-code:after:content-none
+              prose-blockquote:border-l-accent prose-blockquote:text-ink"
           >
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
@@ -118,31 +123,33 @@ export default async function BlogPostPage({ params }: Props) {
               {post.content}
             </ReactMarkdown>
           </div>
-
-          {/* Footer CTA */}
-          <footer className="mt-20 p-8 md:p-12 rounded-3xl bg-foreground text-background flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-display font-semibold">
-                {t("ctaTitle")}
-              </h2>
-              <p className="mt-2 text-background/70">{t("ctaDescription")}</p>
-            </div>
-            <Button variant="heroLight" size="lg" className="group" asChild>
-              <a
-                href="https://cal.com/jose-manuel-veliz/15min"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {t("ctaButton")}
-                <ArrowUpRight
-                  size={18}
-                  className="group-hover:rotate-45 transition-transform"
-                />
-              </a>
-            </Button>
-          </footer>
         </article>
       </main>
-    </div>
+
+      <section className="bg-paper text-paper-ink page-x py-[clamp(80px,10vw,140px)]">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
+          <div>
+            <h2 className="text-[clamp(40px,6vw,96px)] tracking-[-0.05em] leading-[0.92] max-w-[14ch]">
+              {t("ctaTitle")}
+            </h2>
+            <p className="mt-6 text-[17px] md:text-[20px]">
+              {t("ctaDescription")}
+            </p>
+          </div>
+          <a
+            href={CAL_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="btn min-h-14 w-full md:w-auto"
+          >
+            {t("ctaButton")}
+            <span aria-hidden="true" className="btn-arrow">
+              →
+            </span>
+          </a>
+        </div>
+      </section>
+      <SiteFooter />
+    </>
   );
 }

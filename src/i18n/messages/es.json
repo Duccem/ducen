@@ -1,298 +1,242 @@
 {
   "metadata": {
-    "title": "Jose Veliz | Senior Full Stack Engineer · Agentes de IA, SaaS y Fintech",
-    "description": "Senior full stack engineer que construye agentes de IA, productos SaaS e integraciones fintech para startups."
+    "title": "José Véliz | Ingeniero full stack freelance · Web, SaaS y agentes de IA",
+    "description": "Ingeniero full stack freelance. Convierto tu idea en un producto en producción: webs, tiendas, SaaS y agentes de IA, con alcance, plazo y entregables claros."
   },
   "nav": {
     "items": [
-      {
-        "label": "Inicio",
-        "href": "/#hero"
-      },
-      {
-        "label": "Sobre mí",
-        "href": "/#about"
-      },
-      {
-        "label": "Experiencia",
-        "href": "/#experience"
-      },
-      {
-        "label": "Proyectos",
-        "href": "/#projects"
-      },
-      {
-        "label": "Servicios",
-        "href": "/#services"
-      },
-      {
-        "label": "Proceso",
-        "href": "/#process"
-      },
-      {
-        "label": "Blog",
-        "href": "/blog"
-      },
-      {
-        "label": "Contacto",
-        "href": "/#contact"
-      }
+      { "label": "Proyectos", "href": "/#work" },
+      { "label": "Servicios", "href": "/#services" },
+      { "label": "Proceso", "href": "/#process" },
+      { "label": "Sobre mí", "href": "/#about" },
+      { "label": "Blog", "href": "/blog" }
     ],
     "cta": "Hablemos",
+    "menu": "Menú",
+    "close": "Cerrar",
     "switcherLabel": "Idioma",
     "locales": [
-      {
-        "value": "en",
-        "label": "EN"
-      },
-      {
-        "value": "es",
-        "label": "ES"
-      }
+      { "value": "es", "label": "ES" },
+      { "value": "en", "label": "EN" }
     ]
   },
   "hero": {
-    "greeting": "Hola, soy",
-    "role": "Senior Full Stack Engineer · Agentes de IA, SaaS y Fintech",
-    "description": "Creo software que impulsa negocios. Especializado en soluciones SaaS y aplicaciones web para emprendedores y startups.",
-    "ctaPrimary": "¿Tienes un proyecto?",
-    "ctaSecondary": "Mi CV",
-    "imageAlt": "Jose Manuel Veliz - Senior Full Stack Engineer · Agentes de IA, SaaS y Fintech"
+    "word": "Véliz",
+    "sentence": "Soy José Manuel, ingeniero full stack freelance. Convierto tu idea en un producto que funciona, en semanas.",
+    "cta": "Agenda una llamada de 15 min",
+    "ctaShort": "Agendar llamada",
+    "secondary": "Ver proyectos"
   },
-  "about": {
-    "title": "Sobre mí",
-    "paragraph1": "Mi camino en el software comenzó con la curiosidad de entender cómo funcionan las cosas. Esa curiosidad se transformó en pasión por crear soluciones que realmente ayudan a los negocios a crecer.",
-    "paragraph2": "Me especializo en trabajar con emprendedores y startups que necesitan digitalizar sus operaciones. Entiendo que cada peso cuenta y que necesitas resultados, no promesas.",
-    "stats": [
-      {
-        "value": "10+",
-        "label": "Proyectos completados"
-      },
-      {
-        "value": "95%",
-        "label": "Clientes satisfechos"
-      },
-      {
-        "value": "7+",
-        "label": "Años de experiencia"
-      }
-    ],
-    "imageAlt": "Jose Manuel Veliz"
-  },
-  "experience": {
-    "title": "Experiencia",
-    "subtitle": "Dónde he construido y lanzado producto",
+  "work": {
+    "title": "Proyectos recientes",
+    "intro": "Productos en línea que puedes abrir ahora mismo.",
+    "visit": "Abrir el sitio",
     "items": [
       {
-        "role": "Founder Engineer",
-        "company": "Disso",
-        "location": "Bélgica",
-        "period": "2024 – 2026",
-        "highlights": [
-          "Diseñé y construí desde cero el dashboard de control principal de la herramienta central del sistema de gestión de amenazas de Disso.",
-          "Construí agentes de IA y procesos en segundo plano para el análisis y la gestión del riesgo humano.",
-          "Responsable de la arquitectura y la entrega de extremo a extremo como uno de los primeros ingenieros."
-        ],
-        "metrics": [
-          {
-            "value": "4",
-            "label": "Organizaciones atendidas"
-          },
-          {
-            "value": "10.000+",
-            "label": "Amenazas detectadas y bloqueadas"
-          }
-        ]
+        "name": "Lintel",
+        "kind": "Inmobiliaria",
+        "description": "Catálogo de casas con buscador por zona, tipo y precio, y reserva de visitas en línea.",
+        "href": "https://lumen-real-state.vercel.app",
+        "image": "/images/work/real-estate.png",
+        "alt": "Página de inicio de Lintel: una casa moderna entre árboles y el buscador de propiedades"
       },
       {
-        "role": "Senior Full Stack Engineer",
-        "company": "Rappi",
-        "location": "Remoto",
-        "period": "Mayo 2022 – Octubre 2024",
-        "highlights": [
-          "Lideré la migración del área de soporte a restaurantes a modelos de inteligencia artificial.",
-          "Trabajé sobre una infraestructura de más de 1.000 microservicios, manteniendo sistemas críticos escalables y con buen rendimiento."
-        ],
-        "metrics": [
-          {
-            "value": "86%",
-            "label": "Tickets automatizados"
-          },
-          {
-            "value": "$30.000+",
-            "label": "Ahorrados al mes"
-          }
-        ]
+        "name": "Bay Seven",
+        "kind": "Taller mecánico",
+        "description": "Precios fijos, reserva de revisiones y seguimiento del coche en tiempo real por su llavero.",
+        "href": "https://lumen-car-workshop.vercel.app",
+        "image": "/images/work/car-workshop.png",
+        "alt": "Página de inicio de Bay Seven: un coche en el elevador del taller y el buscador por llavero"
       },
       {
-        "role": "Semi Senior Full Stack Engineer",
-        "company": "Circle SPA",
-        "location": "Remoto",
-        "period": "Noviembre 2020 – Mayo 2022",
-        "highlights": [
-          "Lideré el desarrollo de aplicaciones web para proyectos financieros, gestionando un equipo de 3 desarrolladores.",
-          "Construí desde cero una librería de componentes reutilizables.",
-          "Diseñé e implementé APIs en Node.js y Python para integrar servicios externos de pagos y financieros."
-        ]
+        "name": "Glow Market",
+        "kind": "Tienda online",
+        "description": "Tienda de maquillaje con catálogo, búsqueda, cuenta de cliente y carrito de compra.",
+        "href": "https://lumen-front-store.vercel.app",
+        "image": "/images/work/store.png",
+        "alt": "Página de inicio de Glow Market: retrato de una modelo aplicándose crema"
       },
       {
-        "role": "Backend Engineer",
-        "company": "Leiros SA",
-        "location": "Porlamar, Venezuela",
-        "period": "Abril 2020 – Diciembre 2020",
-        "highlights": [
-          "Diseñé e implementé una API GraphQL para la migración de toda la plataforma ERP a un nuevo stack.",
-          "Construí reportes SQL para la plataforma de analítica de la empresa."
-        ]
-      }
-    ]
-  },
-  "projects": {
-    "title": "Proyectos",
-    "titleEmphasis": "Seleccionados",
-    "roleLabel": "Rol",
-    "items": [
-      {
-        "number": "01",
-        "title": "Helsa",
-        "subtitle": "Sistema de gestión para clínicas de salud y doctores",
-        "description": "Plataforma integral que permitió a clínicas de salud digitalizar su gestión, reduciendo tiempos administrativos un 50% y mejorando la experiencia del paciente.",
-        "tech": [
-          "Next.js",
-          "TypeScript",
-          "PostgreSQL"
-        ],
-        "role": "Desarrollador Full Stack",
-        "href": "https://helsa-web.vercel.app"
-      },
-      {
-        "number": "02",
-        "title": "PartySplit",
-        "subtitle": "App de división de gastos para eventos sociales",
-        "description": "Aplicación móvil que facilita la división de gastos entre amigos durante eventos sociales, logrando simplificar el proceso y reducir conflictos financieros.",
-        "tech": [
-          "React Native",
-          "Expo",
-          "Supabase"
-        ],
-        "role": "Desarrollador Full Stack",
-        "href": "https://www.partysplit.app/"
-      },
-      {
-        "number": "03",
-        "title": "Influencer Inmobiliaria",
-        "subtitle": "Sistema de gestión para agentes inmobiliarios",
-        "description": "Plataforma diseñada para agentes inmobiliarios que optimiza la gestión de propiedades y clientes, incrementando las ventas en un 30% mediante herramientas de seguimiento y análisis.",
-        "tech": [
-          "NextJS",
-          "PayloadCMS",
-          "AWS"
-        ],
-        "role": "Desarrollador Full Stack",
-        "href": "https://www.influenciainmobiliaria.com/"
+        "name": "Helsa",
+        "kind": "SaaS para psicólogos",
+        "description": "Expedientes, agenda, videoconsulta y cobros para terapeutas, pensado para cuando baja la señal.",
+        "href": "https://helsa-health.vercel.app",
+        "image": "/images/work/helsa.png",
+        "alt": "Página de inicio de Helsa: el lema «Tu consulta, en orden» y la agenda del día"
       }
     ]
   },
   "services": {
-    "title": "Servicios",
-    "subtitle": "Paquetes concretos con alcance, plazo y resultado claros",
-    "items": [
+    "title": "Lo que construyo",
+    "hint": "Pasa el cursor por cualquier línea para ver el detalle.",
+    "groups": [
       {
-        "title": "MVP en 6-8 semanas",
-        "description": "De la idea a un producto en manos de tus usuarios: app web o móvil diseñada, construida y desplegada con un alcance cerrado desde el primer día."
+        "title": "MVP en 6–8 semanas",
+        "description": "De la idea a un producto en manos de tus usuarios: web o app móvil diseñada, construida y desplegada con un alcance cerrado desde el primer día.",
+        "items": ["Landing y web app", "Tienda online", "App móvil", "Cuentas y roles", "Pagos y suscripciones", "Panel de administración", "Despliegue en producción"]
       },
       {
-        "title": "Integración de agentes de IA",
-        "description": "Agentes y automatizaciones en segundo plano conectados a tu producto y tus datos para asumir soporte, análisis y operaciones repetitivas."
+        "title": "Agentes de IA",
+        "description": "Agentes y automatizaciones conectados a tu producto y a tus datos para asumir soporte, análisis y operaciones repetitivas.",
+        "items": ["Agentes de soporte", "Procesos en segundo plano", "Conexión con tus datos", "Integración con tu CRM", "Guardarraíles", "Evaluación continua"]
       },
       {
         "title": "Dashboard SaaS",
-        "description": "El panel de control de tu producto construido desde cero: métricas, roles, facturación e integraciones sobre una arquitectura lista para escalar."
+        "description": "El panel de control de tu producto, construido desde cero: métricas, roles, facturación e integraciones sobre una arquitectura lista para crecer.",
+        "items": ["Métricas en tiempo real", "Roles y permisos", "Facturación", "Integraciones y APIs", "Multi-empresa", "Arquitectura escalable"]
       }
     ]
   },
   "process": {
-    "title": "Proceso de trabajo",
-    "subtitle": "Cinco etapas, cada una con entregables concretos que quedan en tus manos",
-    "items": [
+    "title": "Tu proyecto, por escrito",
+    "intro": "Elige qué necesitas y mira el itinerario: cada etapa, cuánto dura y qué queda en tus manos al terminar.",
+    "typeLabel": "Qué quieres construir",
+    "extrasLabel": "Qué más necesita",
+    "types": [
+      { "id": "web", "label": "Web o landing" },
+      { "id": "store", "label": "Tienda online" },
+      { "id": "saas", "label": "SaaS o dashboard" },
+      { "id": "agent", "label": "Agente de IA" },
+      { "id": "mobile", "label": "App móvil" }
+    ],
+    "extras": [
+      { "id": "payments", "label": "Pagos" },
+      { "id": "admin", "label": "Panel de administración" },
+      { "id": "ai", "label": "IA integrada" },
+      { "id": "i18n", "label": "Varios idiomas" }
+    ],
+    "slipTitle": "Itinerario",
+    "week": "Semana {from}",
+    "weeks": "Semanas {from}–{to}",
+    "unit": "{n} sem",
+    "stages": [
       {
         "title": "Definición y alcance",
-        "description": "Definimos las necesidades y los alcances del proyecto antes de escribir una sola línea de código, para que sepas qué se va a construir, en cuánto tiempo y a qué costo.",
-        "label": "Entregables",
-        "deliverables": [
-          "Documento de especificación de requisitos de software (SRS)",
-          "Documento de estimación de tiempos y costos",
-          "Acceso al tablero kanban del proyecto"
-        ]
+        "deliverables": "Documento de requisitos (SRS), estimación de tiempo y costo, acceso al tablero kanban"
       },
       {
-        "title": "Diseño y concepción",
-        "description": "Le damos forma al producto: cómo se ve, cómo está construido por dentro y cómo se organizan sus datos.",
-        "label": "Entregables",
-        "deliverables": [
-          "Mockups de UI, estilos de marca/proyecto y sistema de diseño",
-          "Diagrama y diseño de arquitectura",
-          "Diseño de base de datos y estructuras de datos"
-        ]
+        "title": "Diseño y arquitectura",
+        "deliverables": "Mockups y sistema de diseño, diagrama de arquitectura, diseño de la base de datos"
       },
       {
-        "title": "Desarrollo e iteración",
-        "description": "Construyo el producto por sprints, con entregas frecuentes que puedes revisar y probar a medida que avanza.",
-        "label": "Cómo funciona",
-        "deliverables": [
-          "Los entregables se estructuran y separan por sprints",
-          "Se configura el repositorio en GitHub y se inicia el desarrollo",
-          "Se generan tickets para el testing de las funcionalidades desarrolladas",
-          "Se mantienen entregas por sprint de las funcionalidades acordadas"
-        ]
+        "title": "Desarrollo por sprints",
+        "deliverables": "Repositorio en GitHub, entregas al final de cada sprint que puedes probar"
       },
       {
         "title": "Entrega y despliegue",
-        "description": "El producto sale a producción y todo lo necesario para operarlo y mantenerlo queda en tu poder.",
-        "label": "Entregables",
-        "deliverables": [
-          "Código fuente",
-          "Documentación técnica",
-          "Manuales de usuario",
-          "Configuración del ambiente de producción",
-          "Revisión y agendamiento del lanzamiento",
-          "Testeo de la versión preliminar"
-        ]
+        "deliverables": "Código fuente, documentación técnica, manuales de usuario, producción configurada"
+      }
+    ],
+    "after": "Después del lanzamiento",
+    "support": "Soporte y mantenimiento",
+    "supportDetail": "Horas mensuales para errores, infraestructura y dudas",
+    "supportValue": "mensual",
+    "total": "En tus manos: el producto en producción",
+    "note": "Estimación orientativa. El plan definitivo sale de la llamada de definición.",
+    "send": "Enviarme este plan",
+    "book": "o agenda la llamada",
+    "emailSubject": "Plan de proyecto: {type}",
+    "emailBody": "Hola José, me interesa este plan:\n\nProyecto: {type}\nExtras: {extras}\nDuración estimada: {total} semanas\n\nCuéntame cómo seguimos.",
+    "none": "ninguno"
+  },
+  "experience": {
+    "title": "Experiencia",
+    "band": "Empresas donde construí y lancé producto antes de trabajar por mi cuenta.",
+    "items": [
+      {
+        "company": "Disso",
+        "role": "Founder Engineer",
+        "location": "Bélgica",
+        "period": "2024 – 2026",
+        "highlight": "Construí desde cero el dashboard central y los agentes de IA para gestionar el riesgo humano."
       },
       {
-        "title": "Mantenimiento y soporte",
-        "description": "Después del lanzamiento sigo acompañando el producto con horas de soporte mensuales.",
-        "label": "Qué incluye",
-        "deliverables": [
-          "Horas de soporte mensuales limitadas por desperfectos y errores de código",
-          "Horas de soporte mensuales para infraestructura o dudas",
-          "La adición, modificación o mejora de funcionalidades pasa de nuevo por el proceso de planificación y diseño"
-        ]
+        "company": "Rappi",
+        "role": "Senior Full Stack Engineer",
+        "location": "Remoto",
+        "period": "2022 – 2024",
+        "highlight": "Lideré la migración del soporte a restaurantes a modelos de IA, sobre más de 1.000 microservicios."
+      },
+      {
+        "company": "Circle SPA",
+        "role": "Full Stack Engineer",
+        "location": "Remoto",
+        "period": "2020 – 2022",
+        "highlight": "Lideré un equipo de 3 en aplicaciones financieras e integraciones de pagos."
+      },
+      {
+        "company": "Leiros SA",
+        "role": "Backend Engineer",
+        "location": "Porlamar, Venezuela",
+        "period": "2020",
+        "highlight": "Diseñé la API GraphQL para migrar todo el ERP de la empresa a un stack nuevo."
+      }
+    ],
+    "stats": [
+      { "value": "86%", "label": "de los tickets de soporte automatizados en Rappi" },
+      { "value": "$30.000+", "label": "ahorrados al mes con esa automatización" },
+      { "value": "10.000+", "label": "amenazas detectadas y bloqueadas en Disso" },
+      { "value": "7+", "label": "años construyendo producto web y móvil" }
+    ]
+  },
+  "about": {
+    "title": "Sobre mí",
+    "intro": "Trabajo con emprendedores y negocios que necesitan digitalizarse. Sé que cada peso cuenta: por eso trabajo con alcance cerrado, entregas frecuentes y resultados que puedes ver.",
+    "cv": "Descargar mi CV",
+    "photos": [
+      {
+        "src": "/images/portrait-2.jpg",
+        "title": "José Manuel Véliz",
+        "role": "Ingeniero full stack freelance",
+        "text": "Mi camino empezó por la curiosidad de entender cómo funcionan las cosas. Hoy esa curiosidad está al servicio de productos que ayudan a negocios reales a crecer.",
+        "alt": "Retrato de José Manuel Véliz con gafas y camisa negra"
+      },
+      {
+        "src": "/images/portrait.jpg",
+        "title": "Isla de Margarita",
+        "role": "Venezuela",
+        "text": "Trabajo en remoto con clientes y equipos de varios países, con horarios que se cruzan con América y Europa.",
+        "alt": "José en un balcón curvo con palmeras y edificios de Margarita al fondo"
+      },
+      {
+        "src": "/images/portrait-3.jpg",
+        "title": "Con compañía",
+        "role": "Revisor de código no oficial",
+        "text": "Más de siete años escribiendo software; casi todos con un gato negro cerca del teclado.",
+        "alt": "José en blanco y negro sosteniendo a su gato negro"
       }
     ]
   },
+  "notes": {
+    "title": "Del blog",
+    "all": "Todos los artículos"
+  },
   "contact": {
-    "title": "¿Tienes un proyecto",
-    "titleEmphasis": "en mente?",
-    "description": "Me encantaría escuchar sobre tu idea. Agenda una llamada gratuita y exploremos cómo puedo ayudarte.",
-    "ctaPrimary": "Agendar llamada",
-    "ctaSecondary": "Enviar email",
-    "footer": "© 2026 Jose Manuel Veliz. Todos los derechos reservados."
+    "title": "Tu idea, en producción.",
+    "sentence": "Agenda 15 minutos. Me cuentas qué quieres construir y te digo cómo, en cuánto tiempo y cuánto cuesta.",
+    "cta": "Agendar llamada",
+    "columns": {
+      "contact": "Contacto",
+      "nav": "Navegación",
+      "social": "Redes",
+      "more": "Más"
+    },
+    "book": "Agendar llamada",
+    "cv": "Mi CV",
+    "rights": "© 2026 José Manuel Véliz. Todos los derechos reservados."
   },
   "blog": {
-    "metaTitle": "Blog | Jose Veliz",
+    "metaTitle": "Blog | José Véliz",
     "metaDescription": "Artículos sobre ingeniería de software, agentes de IA y construcción de productos SaaS.",
-    "eyebrow": "Blog",
-    "title": "Ideas y",
-    "titleEmphasis": "aprendizajes",
-    "description": "Notas sobre ingeniería de software, agentes de IA y lo que aprendo construyendo producto.",
+    "title": "Notas de taller",
+    "description": "Ingeniería de software, agentes de IA y lo que aprendo construyendo producto.",
     "featured": "Más reciente",
     "readingTime": "{minutes} min de lectura",
     "readArticle": "Leer artículo",
     "empty": "Todavía no hay artículos publicados. Vuelve pronto.",
     "backToBlog": "Volver al blog",
-    "ctaTitle": "¿Te resultó útil?",
-    "ctaDescription": "Si tienes un proyecto en mente, hablemos.",
+    "ctaTitle": "¿Tienes un proyecto en mente?",
+    "ctaDescription": "Agenda 15 minutos y lo convertimos en un plan.",
     "ctaButton": "Hablemos"
   }
 }

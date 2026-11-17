@@ -1,139 +1,86 @@
 "use client";
-import { AnimatePresence, motion } from "framer-motion";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 
-const skills = [
-  "HTML5",
-  "CSS",
-  "Git",
-  "GitHub",
-  "Node.js",
-  "React",
-  "JavaScript",
-  "TypeScript",
-];
+type Photo = {
+  src: string;
+  title: string;
+  role: string;
+  text: string;
+  alt: string;
+};
 
 export const AboutSection = () => {
   const t = useTranslations("about");
-  const { ref, isVisible } = useScrollAnimation(0.2);
-  const portraitSources = useMemo(
-    () => [
-      "/images/portrait-3.jpg",
-      "/images/portrait.jpg",
-      "/images/portrait-2.jpg",
-    ],
-    [],
-  );
-  const [portraitIndex, setPortraitIndex] = useState(0);
-
-  useEffect(() => {
-    const intervalId = window.setInterval(() => {
-      setPortraitIndex((current) => (current + 1) % portraitSources.length);
-    }, 4000);
-
-    return () => window.clearInterval(intervalId);
-  }, [portraitSources.length]);
+  const photos = t.raw("photos") as Photo[];
+  const offsets = ["md:mr-[30%]", "md:ml-[30%]", "md:mr-[24%]"];
 
   return (
     <section
       id="about"
-      className="section-container bg-background relative overflow-hidden"
+      className="page-x pt-[clamp(120px,16vw,240px)] pb-[clamp(80px,10vw,160px)]"
     >
-      <div className="container mx-auto relative z-10">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0 }}
-          animate={isVisible ? { opacity: 1 } : {}}
-          className="grid lg:grid-cols-2 gap-20 items-center"
-        >
-          {/* Left Column - Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.2 }}
-            className="relative"
-          >
-            <div className="relative w-full max-w-md mx-auto">
-              <div className="aspect-[4/5] rounded-3xl overflow-hidden">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={portraitSources[portraitIndex]}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="w-full h-full"
-                  >
-                    <Image
-                      src={portraitSources[portraitIndex]}
-                      width={1000}
-                      height={1000}
-                      alt={t("imageAlt")}
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-
-              {/* Skill tags floating around image */}
-              <div className="absolute -right-16 top-20 flex flex-wrap gap-2 max-w-[160px]">
-                {skills.slice(0, 4).map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1.5 text-xs font-medium bg-primary text-white  rounded-full shadow-sm"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-              <div className="absolute -left-4 bottom-20 flex flex-wrap gap-2 max-w-[160px]">
-                {skills.slice(4).map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1.5 text-xs font-medium bg-primary text-white  shadow-sm rounded-full"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right Column - Content */}
-          <div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl font-display font-semibold mb-8"
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-x-6">
+        {/* Pinned title */}
+        <div className="md:col-span-5">
+          <div className="md:sticky md:top-0 md:h-svh md:flex md:flex-col md:justify-center">
+            <h2
+              data-reveal
+              className="text-[17vw] md:text-[clamp(72px,9.5vw,170px)] tracking-[-0.055em] leading-[0.85] whitespace-nowrap"
             >
               {t("title")}
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.2 }}
-              className="text-muted-foreground text-lg leading-relaxed mb-6"
+            </h2>
+            <p
+              data-reveal
+              style={{ "--i": 1 } as React.CSSProperties}
+              className="mt-8 text-lead leading-[1.35] max-w-[30ch]"
             >
-              {t("paragraph1")}
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.25 }}
-              className="text-muted-foreground leading-relaxed mb-10"
+              {t("intro")}
+            </p>
+            <a
+              data-reveal
+              style={{ "--i": 2 } as React.CSSProperties}
+              href="/docs/jose-veliz-cv.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-8 self-start text-link text-body"
             >
-              {t("paragraph2")}
-            </motion.p>
+              {t("cv")}
+            </a>
           </div>
-        </motion.div>
+        </div>
+
+        {/* Portraits pass */}
+        <div className="md:col-start-7 md:col-span-6 mt-16 md:mt-[12vh] flex flex-col gap-12 md:gap-[10vh]">
+          {photos.map((photo, i) => (
+            <figure
+              key={photo.src}
+              data-reveal
+              className={`w-[72%] md:w-auto ${i % 2 ? "self-end" : "self-start"} ${offsets[i % offsets.length]}`}
+            >
+              <div className="relative aspect-[4/5] overflow-hidden bg-surface">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes="(min-width: 768px) 30vw, 72vw"
+                  className="object-cover drift"
+                  style={{ animationDelay: `${i * -6}s` }}
+                />
+              </div>
+              <figcaption className="mt-4 max-w-[34ch]">
+                <span className="block text-lead font-semibold tracking-[-0.02em] leading-tight">
+                  {photo.title}
+                </span>
+                <span className="block text-small text-soft mt-1">
+                  {photo.role}
+                </span>
+                <span className="block text-body mt-3">{photo.text}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </div>
     </section>
   );
 };
-
