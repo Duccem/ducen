@@ -63,6 +63,14 @@
         "href": "https://helsa-health.vercel.app",
         "image": "/images/work/helsa.png",
         "alt": "Helsa home page: the headline and the day's appointments"
+      },
+      {
+        "name": "Preci",
+        "kind": "Mobile app",
+        "description": "Compares grocery prices across supermarkets, builds shopping lists and generates the cheapest cart, or one from a single store.",
+        "href": "https://drive.google.com/file/d/1EjiU4PvbLuI0OjDZuq5XBNes0Pe_4P1w/view?usp=sharing",
+        "image": "/images/work/preci.jpg",
+        "alt": "Preci home screen: the product search and the estimated savings comparing 5 supermarkets"
       }
     ]
   },

@@ -63,6 +63,14 @@
         "href": "https://helsa-health.vercel.app",
         "image": "/images/work/helsa.png",
         "alt": "Página de inicio de Helsa: el lema «Tu consulta, en orden» y la agenda del día"
+      },
+      {
+        "name": "Preci",
+        "kind": "App móvil",
+        "description": "Compara precios de alimentos entre supermercados, arma listas de compras y genera el carrito más barato o todo en un solo comercio.",
+        "href": "https://drive.google.com/file/d/1EjiU4PvbLuI0OjDZuq5XBNes0Pe_4P1w/view?usp=sharing",
+        "image": "/images/work/preci.jpg",
+        "alt": "Pantalla de inicio de Preci: el buscador de productos y el ahorro estimado comparando 5 supermercados"
       }
     ]
   },
